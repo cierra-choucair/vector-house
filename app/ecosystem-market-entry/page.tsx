@@ -123,7 +123,7 @@ export default function EcosystemMarketEntryPage() {
       </section>
 
       {/* How it connects */}
-      <section className="bg-grid relative border-t border-edge">
+      <section className="relative border-t border-edge">
         <Container className="py-20 md:py-28">
           <Reveal className="mx-auto max-w-3xl">
             <SectionHeading

@@ -83,7 +83,7 @@ export function VectorField() {
           fill="#9298a4"
           fillOpacity="0.4"
           fontSize="9"
-          style={{ fontFamily: "var(--font-geist-mono)" }}
+          style={{ fontFamily: "var(--font-mono)" }}
         >
           x 41.20
         </text>
@@ -93,7 +93,7 @@ export function VectorField() {
           fill="#9298a4"
           fillOpacity="0.4"
           fontSize="9"
-          style={{ fontFamily: "var(--font-geist-mono)" }}
+          style={{ fontFamily: "var(--font-mono)" }}
         >
           y 118.06
         </text>

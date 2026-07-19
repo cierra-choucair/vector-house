@@ -87,9 +87,6 @@ export function MobileNav() {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-40 flex flex-col bg-night"
           >
-            {/* faint grid backdrop */}
-            <div aria-hidden="true" className="bg-grid absolute inset-0" />
-
             <nav
               aria-label="Mobile"
               className="relative flex flex-1 flex-col justify-center gap-1 px-8"

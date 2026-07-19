@@ -70,7 +70,7 @@ export default async function ArticlePage({
 
       <article>
         {/* Article header */}
-        <header className="bg-grid relative overflow-hidden border-b border-edge">
+        <header className="relative overflow-hidden border-b border-edge">
           <div aria-hidden="true" className="bg-glow absolute inset-0" />
           <Container className="relative pt-36 pb-14 md:pt-44">
             <Reveal>

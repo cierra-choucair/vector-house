@@ -29,11 +29,8 @@ export function renderOgImage({
           justifyContent: "space-between",
           padding: "72px 80px",
           backgroundColor: "#0a0b0e",
-          backgroundImage:
-            "linear-gradient(to right, rgba(234,231,224,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(234,231,224,0.05) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
           color: "#eae7e0",
-          fontFamily: "Georgia, serif",
+          fontFamily: "sans-serif",
         }}
       >
         {/* Rising vector accent */}

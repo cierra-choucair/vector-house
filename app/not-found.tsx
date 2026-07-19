@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ui/Button";
 /** Custom 404: an off-course trajectory, redirected home. */
 export default function NotFound() {
   return (
-    <section className="bg-grid relative flex min-h-svh items-center overflow-hidden">
+    <section className="relative flex min-h-svh items-center overflow-hidden">
       <div aria-hidden="true" className="bg-glow absolute inset-0" />
 
       {/* A trajectory that misses its mark */}

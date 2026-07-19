@@ -78,7 +78,7 @@ export function ArticleVisual({
     <div
       aria-hidden="true"
       className={cn(
-        "bg-grid relative overflow-hidden border border-edge bg-card",
+        "relative overflow-hidden border border-edge bg-card",
         className,
       )}
     >

@@ -22,7 +22,7 @@ export function Hero() {
         };
 
   return (
-    <section className="bg-grid relative flex min-h-svh items-center overflow-hidden">
+    <section className="relative flex min-h-svh items-center overflow-hidden">
       <div aria-hidden="true" className="bg-glow absolute inset-0" />
       <VectorField />
 

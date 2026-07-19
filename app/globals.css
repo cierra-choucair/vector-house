@@ -25,9 +25,13 @@
   --color-signal: #6d8df6; /* electric blue */
   --color-iris: #9a8cf8; /* violet */
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Single-family typography: DM Sans everywhere. The serif and mono
+     tokens intentionally alias to DM Sans so existing font-serif /
+     font-mono utilities keep working; swap either line to reintroduce
+     a second family later. */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
   --tracking-eyebrow: 0.18em;
 }
@@ -63,14 +67,6 @@ body {
 /* ------------------------------------------------------------------ */
 /* Utilities                                                           */
 /* ------------------------------------------------------------------ */
-
-/* Fine architectural grid, used as a section backdrop. */
-@utility bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(234 231 224 / 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(234 231 224 / 0.035) 1px, transparent 1px);
-  background-size: 72px 72px;
-}
 
 /* Radial glow anchoring hero and CTA sections. */
 @utility bg-glow {

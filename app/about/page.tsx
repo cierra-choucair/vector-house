@@ -83,7 +83,7 @@ export default function AboutPage() {
 
           {/* Working philosophy panel */}
           <Reveal delay={0.15}>
-            <div className="bg-grid relative flex h-full flex-col justify-between gap-10 border border-edge bg-card p-8 md:p-10">
+            <div className="relative flex h-full flex-col justify-between gap-10 border border-edge bg-card p-8 md:p-10">
               <Eyebrow>Working philosophy</Eyebrow>
               <div>
                 <p className="font-serif text-2xl leading-snug text-paper italic md:text-[1.65rem]">
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       {/* International perspective */}
-      <section className="bg-grid relative border-t border-edge">
+      <section className="relative border-t border-edge">
         <Container className="grid gap-12 py-20 md:grid-cols-[1fr_1.2fr] md:gap-20 md:py-28">
           <Reveal>
             <SectionHeading

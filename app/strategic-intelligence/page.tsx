@@ -128,7 +128,7 @@ export default function StrategicIntelligencePage() {
       </section>
 
       {/* Research for decisions */}
-      <section className="bg-grid relative border-t border-edge">
+      <section className="relative border-t border-edge">
         <Container className="py-20 md:py-28">
           <Reveal className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-20">
             <div>

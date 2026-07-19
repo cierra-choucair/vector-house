@@ -97,7 +97,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Vector House */}
-      <section className="bg-grid relative border-t border-edge">
+      <section className="relative border-t border-edge">
         <Container className="py-24 md:py-32">
           <Reveal>
             <SectionHeading
@@ -208,7 +208,7 @@ export default function HomePage() {
 
           {/* Abstract founder panel: trajectory diagram in place of a photo */}
           <Reveal delay={0.15} className="hidden md:block">
-            <div className="bg-grid relative h-full min-h-105 border border-edge bg-card">
+            <div className="relative h-full min-h-105 border border-edge bg-card">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 400 520"
