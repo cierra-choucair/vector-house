@@ -2,11 +2,12 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 /**
- * Vector House mark: a coordinate frame crossed by a rising vector.
- * Two corner ticks suggest an axis system; the arrow gives it direction.
- * Drawn with strokes only so it stays crisp at 20px.
+ * Fourth Axis mark: a tesseract in plane projection — the outer cell,
+ * the inner cell and the four edges that connect them through the
+ * fourth dimension. Drawn with strokes only so it stays crisp at 20px
+ * and reads as architecture, not ornament.
  */
-export function VectorMark({ className }: { className?: string }) {
+export function TesseractMark({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -14,24 +15,32 @@ export function VectorMark({ className }: { className?: string }) {
       aria-hidden="true"
       className={cn("h-6 w-6", className)}
     >
-      {/* axis ticks: bottom-left and top-right corners */}
-      <path
-        d="M4 20v8h8"
+      {/* outer cell */}
+      <rect
+        x="4.5"
+        y="4.5"
+        width="23"
+        height="23"
         stroke="currentColor"
-        strokeWidth="1.5"
         strokeOpacity="0.45"
+        strokeWidth="1.5"
       />
+      {/* connecting edges through the fourth axis */}
       <path
-        d="M28 12V4h-8"
+        d="M4.5 4.5 12 12M27.5 4.5 20 12M4.5 27.5 12 20M27.5 27.5 20 20"
         stroke="currentColor"
-        strokeWidth="1.5"
-        strokeOpacity="0.45"
+        strokeOpacity="0.35"
+        strokeWidth="1.2"
       />
-      {/* rising vector with arrowhead */}
-      <path d="M7 25 23 9" stroke="currentColor" strokeWidth="1.8" />
-      <path d="M15.5 8.5H23.5V16.5" stroke="currentColor" strokeWidth="1.8" />
-      {/* origin node */}
-      <circle cx="7" cy="25" r="2" fill="currentColor" />
+      {/* inner cell */}
+      <rect
+        x="12"
+        y="12"
+        width="8"
+        height="8"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
     </svg>
   );
 }
@@ -48,7 +57,7 @@ export function Wordmark({ className }: { className?: string }) {
         className,
       )}
     >
-      Vector&nbsp;House
+      Fourth&nbsp;Axis
     </span>
   );
 }
@@ -57,13 +66,13 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="Vector House — home"
+      aria-label="Fourth Axis — home"
       className={cn(
         "group inline-flex items-center gap-3 text-paper transition-colors hover:text-white",
         className,
       )}
     >
-      <VectorMark className="text-signal transition-transform duration-300 group-hover:-translate-y-px group-hover:translate-x-px" />
+      <TesseractMark className="text-signal transition-transform duration-500 group-hover:rotate-90" />
       <Wordmark />
     </Link>
   );

@@ -3,8 +3,8 @@ import { ImageResponse } from "next/og";
 /**
  * Reusable Open Graph image template.
  * Used by the root opengraph-image and per-article variants so every
- * share card carries the same visual system: night background, fine
- * grid, a rising vector, the wordmark and a large headline.
+ * share card carries the same visual system: night background, the
+ * tesseract, the wordmark and a large headline.
  */
 
 export const ogSize = { width: 1200, height: 630 };
@@ -12,7 +12,7 @@ export const ogSize = { width: 1200, height: 630 };
 export function renderOgImage({
   eyebrow,
   title,
-  footer = "vectorhouse.com",
+  footer = "fourthaxis.com",
 }: {
   eyebrow: string;
   title: string;
@@ -28,32 +28,49 @@ export function renderOgImage({
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          backgroundColor: "#0a0b0e",
+          backgroundColor: "#0a0a10",
           color: "#eae7e0",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Rising vector accent */}
+        {/* Tesseract, anchored right */}
         <svg
           width="1200"
           height="630"
           viewBox="0 0 1200 630"
           style={{ position: "absolute", top: 0, left: 0 }}
         >
+          <rect
+            x="850"
+            y="120"
+            width="270"
+            height="270"
+            fill="none"
+            stroke="#eae7e0"
+            strokeOpacity="0.2"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M850 120 938 208M1120 120 1032 208M850 390 938 302M1120 390 1032 302"
+            fill="none"
+            stroke="#a878c8"
+            strokeOpacity="0.45"
+            strokeWidth="1.5"
+          />
+          <rect
+            x="938"
+            y="208"
+            width="94"
+            height="94"
+            fill="none"
+            stroke="#7d8bf3"
+            strokeOpacity="0.9"
+            strokeWidth="2"
+          />
           <path
             d="M-40 560 C 300 500, 560 480, 800 340 S 1120 140, 1260 80"
             fill="none"
-            stroke="#6d8df6"
-            strokeOpacity="0.45"
-            strokeWidth="2"
-          />
-          <circle cx="800" cy="340" r="6" fill="#6d8df6" />
-          <circle
-            cx="800"
-            cy="340"
-            r="18"
-            fill="none"
-            stroke="#6d8df6"
+            stroke="#7d8bf3"
             strokeOpacity="0.35"
             strokeWidth="2"
           />
@@ -65,32 +82,35 @@ export function renderOgImage({
             display: "flex",
             alignItems: "center",
             gap: "18px",
-            fontFamily: "monospace",
           }}
         >
           <svg width="34" height="34" viewBox="0 0 32 32">
-            <path
-              d="M4 20v8h8"
+            <rect
+              x="4.5"
+              y="4.5"
+              width="23"
+              height="23"
+              fill="none"
               stroke="#eae7e0"
               strokeOpacity="0.5"
               strokeWidth="1.5"
-              fill="none"
             />
             <path
-              d="M28 12V4h-8"
-              stroke="#eae7e0"
-              strokeOpacity="0.5"
-              strokeWidth="1.5"
+              d="M4.5 4.5 12 12M27.5 4.5 20 12M4.5 27.5 12 20M27.5 27.5 20 20"
               fill="none"
+              stroke="#a878c8"
+              strokeOpacity="0.6"
+              strokeWidth="1.2"
             />
-            <path d="M7 25 23 9" stroke="#6d8df6" strokeWidth="2" fill="none" />
-            <path
-              d="M15.5 8.5H23.5V16.5"
-              stroke="#6d8df6"
-              strokeWidth="2"
+            <rect
+              x="12"
+              y="12"
+              width="8"
+              height="8"
               fill="none"
+              stroke="#7d8bf3"
+              strokeWidth="1.8"
             />
-            <circle cx="7" cy="25" r="2.2" fill="#6d8df6" />
           </svg>
           <div
             style={{
@@ -100,7 +120,7 @@ export function renderOgImage({
               color: "#eae7e0",
             }}
           >
-            VECTOR HOUSE
+            FOURTH AXIS
           </div>
         </div>
 
@@ -111,22 +131,21 @@ export function renderOgImage({
               display: "flex",
               alignItems: "center",
               gap: "16px",
-              fontFamily: "monospace",
-              fontSize: 22,
-              letterSpacing: "0.2em",
-              color: "#9298a4",
+              fontSize: 21,
+              letterSpacing: "0.18em",
+              color: "#9498a6",
               textTransform: "uppercase",
             }}
           >
-            <div style={{ width: 40, height: 2, backgroundColor: "#6d8df6" }} />
+            <div style={{ width: 40, height: 2, backgroundColor: "#7d8bf3" }} />
             {eyebrow}
           </div>
           <div
             style={{
               display: "flex",
-              fontSize: title.length > 60 ? 54 : 66,
+              fontSize: title.length > 60 ? 52 : 64,
               lineHeight: 1.12,
-              maxWidth: 980,
+              maxWidth: 900,
               color: "#eae7e0",
             }}
           >
@@ -139,12 +158,13 @@ export function renderOgImage({
           style={{
             display: "flex",
             justifyContent: "space-between",
-            fontFamily: "monospace",
             fontSize: 20,
-            color: "#9298a4",
+            color: "#9498a6",
           }}
         >
-          <div style={{ display: "flex" }}>Ideas with direction.</div>
+          <div style={{ display: "flex" }}>
+            The missing dimension between vision and execution.
+          </div>
           <div style={{ display: "flex" }}>{footer}</div>
         </div>
       </div>

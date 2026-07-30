@@ -1,11 +1,14 @@
-# Vector House
+# Fourth Axis
 
-**Ideas with direction.**
+**The missing dimension between vision and execution.**
 
-The website for Vector House, a strategic intelligence and advisory firm for
-frontier technology. Built with Next.js (App Router), TypeScript, Tailwind CSS
-and Framer Motion. Content is stored in typed data files (no CMS), structured
-for a clean migration to a headless CMS later.
+The website for Fourth Axis, a strategy, communications and intelligence
+practice for consequential technologies. Built with Next.js (App Router),
+TypeScript, Tailwind CSS and Framer Motion. Content is stored in typed data
+files (no CMS), structured for a clean migration to a headless CMS later.
+
+> Note: the repository is named `vector-house` from before the rebrand;
+> the product is Fourth Axis throughout.
 
 ---
 
@@ -20,6 +23,7 @@ for a clean migration to a headless CMS later.
 - [Project structure](#project-structure)
 - [Updating text and images](#updating-text-and-images)
 - [Adding an article](#adding-an-article)
+- [Editing services, offers and proof stories](#editing-services-offers-and-proof-stories)
 - [Configuring the contact form](#configuring-the-contact-form)
 - [Configuring the newsletter](#configuring-the-newsletter)
 - [Configuring analytics](#configuring-analytics)
@@ -33,8 +37,8 @@ for a clean migration to a headless CMS later.
 Requirements: **Node.js 20+** (22 recommended) and npm.
 
 ```bash
-git clone <repository-url> vector-house
-cd vector-house
+git clone <repository-url> fourth-axis
+cd fourth-axis
 npm install
 cp .env.example .env.local   # optional for local dev; everything works without it
 ```
@@ -72,7 +76,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Building for production
 
 ```bash
-npm run build   # type-checks, lints-adjacent compile, prerenders all routes
+npm run build   # type-checks, prerenders all routes
 npm start       # serve the production build locally
 ```
 
@@ -99,13 +103,15 @@ The site also runs on any Node host: `npm run build && npm start`.
 
 ## Connecting a custom domain
 
-1. In Vercel, open **Settings → Domains** and add `vectorhouse.com` (and
-   `www.vectorhouse.com`, redirected to the apex or vice versa).
-2. At your DNS provider, add the records Vercel shows you (an `A` record for
+1. Complete formal business-name, trademark and domain clearance first
+   (see the foundational positioning document).
+2. In Vercel, open **Settings → Domains** and add the production domain
+   (e.g. `fourthaxis.com`, plus `www` redirected to the apex).
+3. At your DNS provider, add the records Vercel shows you (an `A` record for
    the apex, `CNAME` for `www`).
-3. Set `NEXT_PUBLIC_SITE_URL` to the final URL and redeploy so metadata,
+4. Set `NEXT_PUBLIC_SITE_URL` to the final URL and redeploy so metadata,
    sitemap and structured data pick it up.
-4. If the public email address differs from the placeholder, update it in
+5. If the public email address differs from the placeholder, update it in
    `data/site.ts`.
 
 ## Project structure
@@ -114,19 +120,24 @@ The site also runs on any Node host: `npm run build && npm start`.
 app/                    Routes (App Router)
   api/contact/          Contact form endpoint
   api/newsletter/       Newsletter endpoint
-  insights/[slug]/      Article template + per-article OG image
+  ideas/                Editorial index (search, filters)
+  ideas/[slug]/         Article template + per-article OG image
+  services/             The four practices + offer portfolio
+  work/                 Selected proof stories
+  about/                Founder page
+  speaking/             Speaking and moderation
   sitemap.ts            XML sitemap
   robots.ts             robots.txt
   opengraph-image.tsx   Site-wide OG image
 components/
   forms/                ContactForm, NewsletterForm
-  insights/             Article cards, explorer, body, share, progress
+  ideas/                Article cards, explorer, body, share, progress
   layout/               Header, MobileNav, Footer
-  sections/             Hero, PageHero, CtaSection, VectorField, ...
+  sections/             Hero, TesseractField, PageHero, CtaSection, ...
   seo/                  JsonLd
   ui/                   Button, Container, Eyebrow, Field, Logo, Reveal, ...
-content/articles.ts     All Insights articles (block-based bodies)
-data/                   Site config, navigation, services, speaking, contact
+content/articles.ts     All articles (block-based bodies)
+data/                   Site config, navigation, services, work, speaking, contact
 lib/                    SEO, schema.org, validation, email, newsletter, analytics
 types/                  Shared TypeScript types
 public/                 Static assets
@@ -134,23 +145,30 @@ public/                 Static assets
 
 Central configuration lives in:
 
-- `data/site.ts` — identity, URL, email, social links, **feature flags**
+- `data/site.ts` — identity, master line, URL, email, social links,
+  **feature flags**
 - `data/navigation.ts` — header and footer navigation
-- `data/services.ts` — capabilities, offers, engagements
+- `data/services.ts` — the four practices, engagement depths, offers,
+  Four Dimensions methodology, audiences
+- `data/work.ts` — proof stories for the Work page
 - `content/articles.ts` — articles and categories
 - `app/globals.css` — design tokens (colors, fonts, tracking)
 
+Old routes redirect permanently (`next.config.ts`): `/insights*` → `/ideas*`,
+and the three retired service pages → `/services`.
+
 ## Updating text and images
 
-- **Page copy** for repeated structures (capabilities, offers, themes,
-  engagement lists) lives in `data/`. One-off editorial copy lives in the
-  page files under `app/`, kept in plain JSX for easy editing.
+- **Page copy** for repeated structures (practices, offers, dimensions,
+  audiences, proof stories) lives in `data/`. One-off editorial copy lives
+  in the page files under `app/`, kept in plain JSX for easy editing.
 - **Colors and fonts** are design tokens in `app/globals.css` under `@theme`.
-- **Imagery** is deliberately vector-based (inline SVG components such as
-  `VectorField` and `ArticleVisual`), so there are no raster assets to
-  manage. If you add photographs (e.g. speaker photos), put them in
-  `public/` and render them with `next/image` for automatic optimization
-  and lazy loading.
+  All type is DM Sans; the `serif`/`mono` token names alias to it so a
+  second family can be reintroduced by editing one line.
+- **Imagery** is deliberately vector-based. The tesseract is the brand
+  symbol: `TesseractMark` (logo), `TesseractField` (rotating hero visual),
+  plus generative article visuals. If you add photographs (e.g. the founder
+  portrait), put them in `public/` and render them with `next/image`.
 
 ## Adding an article
 
@@ -160,12 +178,23 @@ Central configuration lives in:
    - `title`, `subtitle`, `excerpt`
    - `category` — one of the categories in `articleCategories`
    - `date` (ISO `YYYY-MM-DD`) and `readingTime`
-   - `featured: true` on at most one article (the Insights hero)
+   - `featured: true` on at most one article (the Ideas hero)
    - `body` — an array of typed blocks: `paragraph`, `heading`,
      `pullquote`, `list`
-3. Done. The article page, Insights grid, search index, related articles,
+3. Done. The article page, Ideas grid, search index, related articles,
    sitemap entry, structured data and Open Graph image are all generated
    from that one object.
+
+## Editing services, offers and proof stories
+
+- **The four practices** (names, summaries, deliverable lists) and the
+  **offer portfolio** ("Ways to begin") live in `data/services.ts`. Offers
+  marked `primary: true` appear on the homepage.
+- **Proof stories** live in `data/work.ts`. Keep them within what the
+  foundational document supports: precise roles, no invented outcomes.
+  HKA client work and partner-owned programs require explicit permission
+  before being added. When public links are gathered, add `href` values
+  and enable `featureFlags.showProofLinks` in `data/site.ts`.
 
 ## Configuring the contact form
 
@@ -185,7 +214,7 @@ A hidden honeypot field silently drops naive bot submissions.
 
 ## Configuring the newsletter
 
-Signup forms (footer and Insights page) post to `/api/newsletter`, which
+Signup forms (footer and Ideas page) post to `/api/newsletter`, which
 routes through `lib/newsletter.ts`. Set the variables for exactly one
 provider — Buttondown, ConvertKit, Beehiiv or Mailchimp (see
 [Environment variables](#environment-variables)); the first configured
@@ -196,7 +225,7 @@ server console and reported as successful.
 
 Analytics are optional and cookie-free. Set **one** of:
 
-- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — e.g. `vectorhouse.com`
+- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` — e.g. `fourthaxis.com`
 - `NEXT_PUBLIC_FATHOM_SITE_ID` — your Fathom site ID
 
 With neither set, no analytics script loads at all (`lib/analytics.tsx`).
@@ -204,11 +233,13 @@ With neither set, no analytics script loads at all (`lib/analytics.tsx`).
 ## Replacing placeholder information
 
 Search the codebase for **`[VERIFIED CONTENT REQUIRED]`**. Each marker sits
-next to a value or empty data array awaiting verified, real-world content:
+next to a value awaiting verified, real-world content:
 
-- `data/site.ts` — production domain, public email address, LinkedIn URL
+- `data/site.ts` — production domain (pending clearance), public email
+  address, LinkedIn URL
+- `data/work.ts` — public links and permissions for proof stories
+- `app/about/page.tsx` — source links for the public-record items
 - `data/speaking.ts` — selected events, testimonials, video credits
-- `app/about/page.tsx` — selected speaking, selected writing, current ventures
 - `app/privacy/page.tsx`, `app/terms/page.tsx` — legal review + effective dates
 
 Sections that depend on unverified content are hidden by the
@@ -216,9 +247,11 @@ Sections that depend on unverified content are hidden by the
 the data **and** flip the matching flag to `true`. The live site never shows
 raw placeholder text.
 
-Truthfulness rule carried over from the brief: never invent client names,
-logos, revenue figures, testimonials, awards, publication credits, speaking
-appearances, academic credentials, partnerships or press coverage.
+Truthfulness rules: never invent client names, logos, revenue figures,
+testimonials, awards, publication credits, speaking appearances, academic
+credentials, partnerships or press coverage. Present partner-owned programs
+and client work under other organizations (including HKA) only with explicit
+permission and precise attribution.
 
 ## Basic SEO maintenance
 

@@ -5,7 +5,7 @@ import type { Article, ArticleCategory } from "@/types";
  *
  * Local mock data structured for later CMS migration: every article is a
  * flat record with a block-based body. All pieces are original editorial
- * written for Vector House and attributed to the founder. No client names,
+ * written for the firm and attributed to the founder. No client names,
  * statistics or external credits appear anywhere in this file.
  */
 

@@ -23,13 +23,13 @@ type DeliveryResult = { delivered: boolean; provider: string };
 
 const CONTACT_TO = process.env.CONTACT_TO_EMAIL ?? siteConfig.email;
 const CONTACT_FROM =
-  process.env.CONTACT_FROM_EMAIL ?? "Vector House <onboarding@resend.dev>";
+  process.env.CONTACT_FROM_EMAIL ?? "Fourth Axis <onboarding@resend.dev>";
 
 function formatInquiryText(data: ContactFormData): string {
   const line = (label: string, value?: string) =>
     `${label}: ${value?.trim() || "—"}`;
   return [
-    "New inquiry via vectorhouse.com",
+    "New inquiry via the Fourth Axis website",
     "",
     line("Name", data.name),
     line("Organization", data.organization),
@@ -38,7 +38,7 @@ function formatInquiryText(data: ContactFormData): string {
     line("Area of interest", data.interest),
     line("Desired timeline", data.timeline),
     line("Budget range", data.budget),
-    line("Heard about Vector House via", data.referral),
+    line("Heard about Fourth Axis via", data.referral),
     "",
     "Project description:",
     data.description.trim(),
@@ -77,16 +77,16 @@ async function sendWithResend(data: ContactFormData): Promise<DeliveryResult> {
       body: JSON.stringify({
         from: CONTACT_FROM,
         to: [data.email],
-        subject: "Vector House — we received your inquiry",
+        subject: "Fourth Axis — we received your inquiry",
         text: [
           `Hi ${data.name.trim().split(/\s+/)[0]},`,
           "",
-          "Thank you for getting in touch with Vector House. Your inquiry has been received and we typically respond within two business days.",
+          "Thank you for getting in touch with Fourth Axis. Your inquiry has been received and we typically respond within two business days.",
           "",
           "If anything is time-sensitive in the meantime, reply directly to this email.",
           "",
-          "Vector House",
-          "Ideas with direction.",
+          "Fourth Axis",
+          "The missing dimension between vision and execution.",
         ].join("\n"),
       }),
       // A failed confirmation should never fail the inquiry itself.

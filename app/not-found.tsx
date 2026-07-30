@@ -47,8 +47,8 @@ export default function NotFound() {
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <ButtonLink href="/">Return home</ButtonLink>
-          <ButtonLink href="/insights" variant="outline">
-            Browse insights
+          <ButtonLink href="/ideas" variant="outline">
+            Browse ideas
           </ButtonLink>
         </div>
         <p className="mt-10 text-sm text-fog">

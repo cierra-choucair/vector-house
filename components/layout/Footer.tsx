@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 import { LinkedInIcon } from "@/components/ui/BrandIcons";
 import { footerNav } from "@/data/navigation";
 import { siteConfig, socialLinks } from "@/data/site";
-import { VectorMark, Wordmark } from "@/components/ui/Logo";
+import { TesseractMark, Wordmark } from "@/components/ui/Logo";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
 const socialIcons = {
@@ -33,15 +33,15 @@ export function Footer() {
         <div className="grid gap-12 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
             <div className="flex items-center gap-3 text-paper">
-              <VectorMark className="text-signal" />
+              <TesseractMark className="text-signal" />
               <Wordmark />
             </div>
             <p className="mt-4 font-serif text-lg text-paper italic">
               {siteConfig.tagline}
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-fog">
-              Strategic intelligence and advisory for founders, investors and
-              institutions building in frontier technology.
+              A strategy, communications and intelligence practice for
+              founders and institutions building consequential technologies.
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((link) => {
@@ -91,7 +91,7 @@ export function Footer() {
             reserved.
           </p>
           <p className="font-mono uppercase tracking-eyebrow">
-            Strategic intelligence for frontier technology
+            For consequential technology
           </p>
         </div>
       </div>

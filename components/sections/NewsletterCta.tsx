@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
-/** Newsletter band used on the Insights index and article pages. */
+/** Newsletter band used on the Ideas index and article pages. */
 export function NewsletterCta() {
   return (
     <section className="border-t border-edge bg-panel">

@@ -38,19 +38,22 @@ export function professionalServiceSchema() {
     email: siteConfig.email,
     parentOrganization: { "@id": orgId },
     knowsAbout: [
-      "Frontier technology strategy",
+      "Consequential technology",
       "Quantum technology",
       "Artificial intelligence",
-      "Market intelligence",
+      "Strategic communications",
+      "Content marketing",
+      "Thought leadership",
       "Strategic positioning",
-      "Founder advisory",
+      "Market intelligence",
+      "Technology ecosystems",
       "International market entry",
     ],
     makesOffer: [
-      "Strategic intelligence",
-      "Founder advisory",
-      "Ecosystem and market entry",
-      "Speaking and moderation",
+      "Communications and marketing",
+      "Strategic positioning",
+      "Intelligence and ecosystems",
+      "Advisory, convening and special projects",
     ].map((name) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name },
@@ -71,7 +74,8 @@ export function personSchema() {
     knowsAbout: [
       "Quantum technology",
       "Artificial intelligence",
-      "Deep tech",
+      "Scientific discovery",
+      "Science communication",
       "Market intelligence",
       "Strategic communications",
       "Technology ecosystems",
@@ -91,7 +95,7 @@ export function websiteSchema() {
 }
 
 export function articleSchema(article: Article) {
-  const url = `${siteConfig.url}/insights/${article.slug}`;
+  const url = `${siteConfig.url}/ideas/${article.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -107,6 +111,6 @@ export function articleSchema(article: Article) {
     publisher: { "@id": orgId },
     mainEntityOfPage: url,
     articleSection: article.category,
-    image: `${siteConfig.url}/insights/${article.slug}/opengraph-image`,
+    image: `${siteConfig.url}/ideas/${article.slug}/opengraph-image`,
   };
 }

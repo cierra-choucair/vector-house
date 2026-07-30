@@ -4,8 +4,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 /** Closing call-to-action band, reused across pages. */
 export function CtaSection({
-  title = "Build the position your technology deserves.",
-  copy = "Vector House works with a select number of founders, investors and institutions navigating consequential decisions in frontier technology.",
+  title = "Bring us one consequential problem.",
+  copy = "Fourth Axis works with a select number of founders, companies and institutions building technologies that deserve to be understood, trusted and acted on.",
   ctaLabel = "Start a conversation",
   ctaHref = "/contact",
 }: {

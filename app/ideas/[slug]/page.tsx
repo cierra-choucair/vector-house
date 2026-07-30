@@ -5,11 +5,11 @@ import { ArrowLeft } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ArticleBody } from "@/components/insights/ArticleBody";
-import { ArticleCard } from "@/components/insights/ArticleCard";
-import { ArticleVisual } from "@/components/insights/ArticleVisual";
-import { ReadingProgress } from "@/components/insights/ReadingProgress";
-import { ShareLinks } from "@/components/insights/ShareLinks";
+import { ArticleBody } from "@/components/ideas/ArticleBody";
+import { ArticleCard } from "@/components/ideas/ArticleCard";
+import { ArticleVisual } from "@/components/ideas/ArticleVisual";
+import { ReadingProgress } from "@/components/ideas/ReadingProgress";
+import { ShareLinks } from "@/components/ideas/ShareLinks";
 import { NewsletterCta } from "@/components/sections/NewsletterCta";
 import {
   getAllArticles,
@@ -38,7 +38,7 @@ export async function generateMetadata({
     ...buildMetadata({
       title: article.title,
       description: article.excerpt,
-      path: `/insights/${article.slug}`,
+      path: `/ideas/${article.slug}`,
       ogType: "article",
     }),
     openGraph: {
@@ -75,11 +75,11 @@ export default async function ArticlePage({
           <Container className="relative pt-36 pb-14 md:pt-44">
             <Reveal>
               <Link
-                href="/insights"
+                href="/ideas"
                 className="inline-flex items-center gap-2 text-sm text-fog transition-colors hover:text-signal"
               >
                 <ArrowLeft aria-hidden="true" className="h-4 w-4" />
-                All insights
+                All ideas
               </Link>
               <p className="mt-8 flex flex-wrap items-center gap-3 font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
                 <span className="text-signal">{article.category}</span>

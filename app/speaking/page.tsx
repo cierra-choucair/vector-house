@@ -62,7 +62,7 @@ export default function SpeakingPage() {
             <SectionHeading
               eyebrow="Themes"
               title="Talks built on real analysis."
-              lede="Each theme draws on Vector House's intelligence work rather than a recycled deck. Talks are tailored to the room, the moment and the audience's actual stakes."
+              lede="Each theme draws on the practice's intelligence work rather than a recycled deck. Talks are tailored to the room, the moment and the audience's actual stakes."
             />
           </Reveal>
           <div className="mt-14 grid gap-x-16 gap-y-10 md:grid-cols-2">

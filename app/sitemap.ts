@@ -6,11 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: { path: string; priority: number }[] = [
     { path: "", priority: 1 },
     { path: "/services", priority: 0.9 },
-    { path: "/strategic-intelligence", priority: 0.9 },
-    { path: "/founder-advisory", priority: 0.9 },
-    { path: "/ecosystem-market-entry", priority: 0.9 },
+    { path: "/work", priority: 0.8 },
     { path: "/about", priority: 0.8 },
-    { path: "/insights", priority: 0.8 },
+    { path: "/ideas", priority: 0.8 },
     { path: "/speaking", priority: 0.7 },
     { path: "/contact", priority: 0.8 },
     { path: "/privacy", priority: 0.2 },
@@ -24,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const articles: MetadataRoute.Sitemap = getAllArticles().map((article) => ({
-    url: `${siteConfig.url}/insights/${article.slug}`,
+    url: `${siteConfig.url}/ideas/${article.slug}`,
     lastModified: new Date(`${article.date}T00:00:00Z`),
     changeFrequency: "yearly",
     priority: 0.6,

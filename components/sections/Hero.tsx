@@ -2,9 +2,9 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ButtonLink } from "@/components/ui/Button";
-import { VectorField } from "@/components/sections/VectorField";
+import { TesseractField } from "@/components/sections/TesseractField";
 
-/** Full-screen homepage hero with the animated vector field behind it. */
+/** Full-screen homepage hero with the rotating tesseract field behind it. */
 export function Hero() {
   const reduceMotion = useReducedMotion();
 
@@ -24,7 +24,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-svh items-center overflow-hidden">
       <div aria-hidden="true" className="bg-glow absolute inset-0" />
-      <VectorField />
+      <TesseractField />
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pt-28 pb-20 md:px-8">
         <motion.p
@@ -32,29 +32,30 @@ export function Hero() {
           className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog"
         >
           <span aria-hidden="true" className="h-px w-6 bg-signal" />
-          Strategic intelligence for frontier technology
+          Communications · Marketing · Strategy · Intelligence
         </motion.p>
 
         <motion.h1
           {...enter(0.25)}
-          className="mt-7 max-w-4xl font-serif text-5xl leading-[1.04] text-balance text-paper sm:text-6xl md:text-7xl lg:text-[5.25rem]"
+          className="mt-7 max-w-4xl font-serif text-5xl leading-[1.04] text-balance text-paper sm:text-6xl md:text-7xl"
         >
-          Technical advantage is only the beginning.
+          Consequential technology needs more than visibility. It needs
+          direction.
         </motion.h1>
 
         <motion.p
           {...enter(0.4)}
           className="mt-8 max-w-2xl text-base leading-relaxed text-fog md:text-lg"
         >
-          Vector House helps frontier-technology leaders understand their
-          market, sharpen their position and turn complex innovation into
-          commercial direction.
+          Fourth Axis brings communications, marketing, strategy and
+          intelligence together to help ambitious technologies become
+          understood, trusted and actionable.
         </motion.p>
 
         <motion.div {...enter(0.55)} className="mt-10 flex flex-wrap gap-4">
           <ButtonLink href="/contact">Start a conversation</ButtonLink>
           <ButtonLink href="/services" variant="outline">
-            Explore our work
+            Explore the practice
           </ButtonLink>
         </motion.div>
       </div>

@@ -7,35 +7,96 @@ import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
-import { featureFlags, siteConfig } from "@/data/site";
+import { coreThesis } from "@/data/services";
 
 export const metadata = buildMetadata({
   title: "About Cierra Choucair",
   description:
-    "Cierra Choucair is a strategist, writer, analyst and ecosystem builder working across quantum technology, artificial intelligence, scientific innovation and international technology communities.",
+    "Cierra Choucair is a strategist, science communicator, journalist, founder and global speaker working across quantum technology, AI, scientific discovery and emerging systems. Founder and principal of Fourth Axis.",
   path: "/about",
 });
 
-const expertiseAreas = [
-  "Quantum technology and its commercial ecosystem",
-  "Artificial intelligence and frontier compute",
-  "Deep tech and scientific innovation",
-  "Market and competitive intelligence",
-  "Strategic positioning and category design",
-  "Technology media and editorial strategy",
-  "Government and institutional engagement",
-  "International ecosystem development",
+/**
+ * The recurring pattern: what each body of work proves.
+ * Source: foundational positioning document (July 2026).
+ */
+const bodyOfWork: { work: string; proves: string }[] = [
+  {
+    work: "Journalism and The Daily Qubit",
+    proves:
+      "Research discipline, technical translation, editorial judgment and the ability to identify signal across a fast-moving field.",
+  },
+  {
+    work: "Strategic content leadership",
+    proves:
+      "The ability to turn company expertise into credible narratives, thought leadership, reports, campaigns and durable market trust.",
+  },
+  {
+    work: "Data analysis and Universum Labs",
+    proves:
+      "A systems-level approach to evidence, relationships, readiness, opportunity analysis and scientific intelligence.",
+  },
+  {
+    work: "Quantum World Tour and ITU programming",
+    proves:
+      "Global ecosystem fluency, executive interviewing, institutional trust, program curation and cross-cultural convening.",
+  },
+  {
+    work: "Android Dreams and QFrontline",
+    proves:
+      "Independent editorial vision, audience building and the ability to create new containers for difficult ideas.",
+  },
+  {
+    work: "QPLI, QUALIA and advisory work",
+    proves:
+      "Coalition-building, mentorship, education strategy and the design of initiatives that connect institutions, experts and emerging talent.",
+  },
+  {
+    work: "Global speaking and moderation",
+    proves:
+      "Executive presence, live synthesis and the ability to guide conversations among technical, government, academic and commercial stakeholders.",
+  },
 ];
 
 /**
- * Selected speaking, writing and ventures.
- * [VERIFIED CONTENT REQUIRED] — populate these arrays with confirmed items,
- * then enable the matching flags in data/site.ts. Sections render nothing
- * until both are done, so the live site never shows placeholders.
+ * External signals of credibility, per the foundational document's
+ * evidence section (public sources reviewed 30 July 2026).
+ * [VERIFIED CONTENT REQUIRED] — add public source links before launch.
  */
-const selectedSpeaking: { title: string; context: string }[] = [];
-const selectedWriting: { title: string; outlet: string }[] = [];
-const currentVentures: { name: string; description: string }[] = [];
+const publicRecord: string[] = [
+  "Appointed in July 2026 to lead HKA's new Strategic Content Division, cited for the combination of journalism, data analysis, strategic communications and knowledge of the global quantum ecosystem.",
+  "Profiled by ITU's AI for Good as a founder, science communicator and global speaker, with documented work across Universum Labs, Android Dreams, QED-C, QUALIA, QPLI and the Quantum World Tour.",
+  "Selected for the International Year of Quantum's Quantum 100.",
+  "Author of The Daily Qubit at The Quantum Insider, covering the quantum industry through journalism and data analysis.",
+];
+
+/** How the wider world of ventures fits together. */
+const ventures: { name: string; role: string; boundary: string }[] = [
+  {
+    name: "Fourth Axis",
+    role: "The commercial strategy, communications, marketing, intelligence and advisory practice.",
+    boundary:
+      "Client-directed work with defined scope, deliverables and commercial terms.",
+  },
+  {
+    name: "Universum Labs",
+    role: "A product and research company developing scientific-intelligence infrastructure and decision tools.",
+    boundary:
+      "Independent of the consultancy; collaborates where a client needs custom research or intelligence technology.",
+  },
+  {
+    name: "Android Dreams",
+    role: "An independent public-interest media and community platform exploring frontier technology and culture.",
+    boundary:
+      "Editorial independence is protected; its coverage is never part of paid consulting.",
+  },
+  {
+    name: "Collaborative initiatives",
+    role: "QPLI, QUALIA, the Quantum World Tour and other coalition or partner-led programs.",
+    boundary:
+      "Shared ownership and governance are respected; Cierra's role is described precisely.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -44,8 +105,8 @@ export default function AboutPage() {
 
       <PageHero
         eyebrow="About"
-        title="Cierra Choucair works across the systems shaping frontier technology."
-        lede="Strategist, writer, analyst and ecosystem builder. Founder and principal of Vector House."
+        title="Cierra Choucair is not a generalist. She is an integrator."
+        lede="Strategist, science communicator, journalist, founder and global speaker. Founder and principal of Fourth Axis."
       />
 
       {/* Biography */}
@@ -53,48 +114,44 @@ export default function AboutPage() {
         <Container className="grid gap-14 py-20 md:grid-cols-[1.2fr_1fr] md:gap-20 md:py-28">
           <Reveal className="space-y-5 text-base leading-relaxed text-fog md:text-lg">
             <p>
-              Cierra Choucair works across quantum technology, artificial
-              intelligence, scientific innovation and the international
-              communities building them. Her practice sits where technical
-              research meets market intelligence, media, government
-              engagement and commercial strategy.
+              Cierra works across quantum technology, artificial
+              intelligence, scientific discovery and emerging systems. The
+              titles vary: journalist, analyst, strategist, founder,
+              moderator. The operating function is consistent. She enters
+              complex environments, identifies the relationships that
+              matter, translates technical depth without sacrificing
+              accuracy, and gives people a clearer way to understand and
+              move.
             </p>
             <p>
-              She has interviewed and advised technology leaders, moderated
-              conversations with global decision-makers and helped
-              organizations articulate the significance of complex
-              technologies to the people positioned to fund, adopt and scale
-              them.
+              Her authority does not come from observing deep tech at a
+              distance. It comes from working inside its communications,
+              data, editorial, founder, ecosystem and institutional layers
+              at the same time. That multidimensional vantage is the reason
+              Fourth Axis exists, and the reason it can credibly connect a
+              precise line of copy to the market and ecosystem conditions
+              that decide whether it matters.
             </p>
             <p>
-              Her perspective is informed by experience spanning data
-              analysis, technology journalism, strategic communications,
-              international ecosystem development and the creation of new
-              scientific and media ventures. That range is the point: frontier
-              technology is decided in many rooms at once, and she has worked
-              in most of them.
-            </p>
-            <p>
-              Vector House is the formalization of that practice: a firm for
-              organizations that need their technical advantage understood,
-              positioned and acted on.
+              Fourth Axis is the commercial form of that practice: a
+              founder-led firm for organizations whose technical ambition
+              has outgrown the way it is currently understood, positioned
+              or carried into the market.
             </p>
           </Reveal>
 
           {/* Working philosophy panel */}
           <Reveal delay={0.15}>
             <div className="relative flex h-full flex-col justify-between gap-10 border border-edge bg-card p-8 md:p-10">
-              <Eyebrow>Working philosophy</Eyebrow>
+              <Eyebrow>Core thesis</Eyebrow>
               <div>
                 <p className="font-serif text-2xl leading-snug text-paper italic md:text-[1.65rem]">
-                  Technology does not enter the world in isolation.
+                  {coreThesis}
                 </p>
                 <p className="mt-6 text-sm leading-relaxed text-fog">
-                  Scientific progress is shaped by stories, institutions,
-                  capital, politics, culture and the people able to make its
-                  significance visible. Vector House exists to help serious
-                  technologies move through those systems with greater
-                  clarity and direction.
+                  Fourth Axis works in the dimension between an ambitious
+                  idea and the coordinated belief, decisions, relationships
+                  and actions required to make it real.
                 </p>
               </div>
             </div>
@@ -102,126 +159,99 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Expertise */}
+      {/* The recurring pattern */}
       <section className="border-t border-edge bg-panel">
         <Container className="py-20 md:py-28">
           <Reveal>
-            <SectionHeading eyebrow="Range" title="Areas of expertise." />
+            <SectionHeading
+              eyebrow="The pattern"
+              title="One function, many rooms."
+              lede="Each body of work proves a capability the practice now offers commercially."
+            />
           </Reveal>
-          <ul className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {expertiseAreas.map((area, index) => (
+          <div className="mt-12 border-t border-edge">
+            {bodyOfWork.map((row, index) => (
+              <Reveal
+                key={row.work}
+                delay={index * 0.03}
+                className="grid gap-3 border-b border-edge py-6 md:grid-cols-[1fr_1.6fr] md:gap-12"
+              >
+                <h3 className="font-serif text-lg leading-snug text-paper">
+                  {row.work}
+                </h3>
+                <p className="text-sm leading-relaxed text-fog md:self-center">
+                  {row.proves}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Public record */}
+      <section className="relative border-t border-edge">
+        <div aria-hidden="true" className="bg-glow absolute inset-0" />
+        <Container className="relative py-20 md:py-28">
+          <Reveal>
+            <SectionHeading
+              eyebrow="On the public record"
+              title="Credibility that predates the firm."
+            />
+          </Reveal>
+          <ul className="mt-12 grid gap-6 md:grid-cols-2">
+            {publicRecord.map((item, index) => (
               <Reveal
                 as="li"
-                key={area}
-                delay={index * 0.04}
-                className="flex items-start gap-3 border border-edge bg-night px-5 py-4 text-sm leading-relaxed text-paper/90"
+                key={item}
+                delay={index * 0.05}
+                className="flex gap-5 border border-edge bg-panel p-7"
               >
-                <span aria-hidden="true" className="mt-2.5 h-px w-4 shrink-0 bg-signal" />
-                {area}
+                <span className="font-mono text-xs text-signal">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="text-sm leading-relaxed text-paper/85">{item}</p>
               </Reveal>
             ))}
           </ul>
         </Container>
       </section>
 
-      {/* International perspective */}
-      <section className="relative border-t border-edge">
-        <Container className="grid gap-12 py-20 md:grid-cols-[1fr_1.2fr] md:gap-20 md:py-28">
+      {/* Ventures and boundaries */}
+      <section className="border-t border-edge bg-panel">
+        <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
-              eyebrow="Perspective"
-              title="Globally oriented by design."
+              eyebrow="The wider world"
+              title="Fourth Axis organizes Cierra's world. It does not absorb it."
+              lede="The ventures around the practice are an asset because their roles are legible, and their boundaries are kept."
             />
           </Reveal>
-          <Reveal
-            delay={0.1}
-            className="space-y-5 self-end text-base leading-relaxed text-fog md:text-lg"
-          >
-            <p>
-              Frontier technology is not built in one country. Research
-              breakthroughs, sovereign funding programs, manufacturing
-              capability and commercial demand are distributed across
-              continents, and the organizations that win read them together.
-            </p>
-            <p>
-              Cierra’s work spans international technology communities and
-              the institutions around them. That vantage shapes everything
-              Vector House produces: analysis that accounts for how markets,
-              governments and research cultures differ, and strategy that
-              travels across them.
-            </p>
-          </Reveal>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {ventures.map((venture, index) => (
+              <Reveal
+                key={venture.name}
+                delay={index * 0.05}
+                className="flex h-full flex-col border border-edge bg-night p-8"
+              >
+                <h3 className="font-serif text-2xl text-paper">{venture.name}</h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-fog">
+                  {venture.role}
+                </p>
+                <p className="mt-5 border-t border-edge pt-4 text-xs leading-relaxed text-fog">
+                  <span className="font-mono uppercase tracking-eyebrow text-paper/70">
+                    Boundary ·{" "}
+                  </span>
+                  {venture.boundary}
+                </p>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
-      {/* Selected speaking — hidden until verified content is added */}
-      {featureFlags.showSelectedEvents && selectedSpeaking.length > 0 && (
-        <section className="border-t border-edge">
-          <Container className="py-20 md:py-28">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Selected speaking"
-                title="Rooms and stages."
-              />
-            </Reveal>
-            <ul className="mt-12 divide-y divide-edge border-y border-edge">
-              {selectedSpeaking.map((item) => (
-                <li key={item.title} className="flex flex-wrap justify-between gap-3 py-5">
-                  <span className="text-paper">{item.title}</span>
-                  <span className="text-sm text-fog">{item.context}</span>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </section>
-      )}
-
-      {/* Selected writing — hidden until verified content is added */}
-      {featureFlags.showSelectedWriting && selectedWriting.length > 0 && (
-        <section className="border-t border-edge">
-          <Container className="py-20 md:py-28">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Selected writing"
-                title="Analysis in print."
-              />
-            </Reveal>
-            <ul className="mt-12 divide-y divide-edge border-y border-edge">
-              {selectedWriting.map((item) => (
-                <li key={item.title} className="flex flex-wrap justify-between gap-3 py-5">
-                  <span className="text-paper">{item.title}</span>
-                  <span className="text-sm text-fog">{item.outlet}</span>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </section>
-      )}
-
-      {/* Current ventures — hidden until verified content is added */}
-      {featureFlags.showCurrentVentures && currentVentures.length > 0 && (
-        <section className="border-t border-edge">
-          <Container className="py-20 md:py-28">
-            <Reveal>
-              <SectionHeading eyebrow="Ventures" title="Current ventures." />
-            </Reveal>
-            <ul className="mt-12 grid gap-6 md:grid-cols-2">
-              {currentVentures.map((venture) => (
-                <li key={venture.name} className="border border-edge bg-panel p-8">
-                  <h3 className="font-serif text-xl text-paper">{venture.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-fog">
-                    {venture.description}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </section>
-      )}
-
       <CtaSection
         title="Work with someone who has seen the whole board."
-        copy={`${siteConfig.name} takes on a limited number of engagements so each gets founder-level attention.`}
+        copy="Fourth Axis takes on a limited number of engagements so each gets founder-level attention."
         ctaLabel="Start a conversation"
       />
     </>

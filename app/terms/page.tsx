@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site";
 
 export const metadata = buildMetadata({
   title: "Terms of Use",
-  description: "Terms governing the use of the Vector House website.",
+  description: "Terms governing the use of the Fourth Axis website.",
   path: "/terms",
 });
 

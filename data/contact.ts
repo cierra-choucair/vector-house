@@ -1,15 +1,16 @@
 /**
  * Contact form configuration: select options and field copy.
  * Kept as data so the form can evolve without touching component logic.
+ * Interest options mirror the four practices plus common standalone asks.
  */
 
 export const interestOptions = [
-  "Strategic intelligence",
-  "Founder advisory",
-  "Market or ecosystem entry",
+  "Communications and marketing",
+  "Strategic positioning",
+  "Market and ecosystem intelligence",
+  "Advisory or embedded partnership",
+  "Event, program or track strategy",
   "Speaking or moderation",
-  "Workshop",
-  "Writing or editorial project",
   "Other",
 ] as const;
 

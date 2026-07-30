@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site";
 
 export const metadata = buildMetadata({
   title: "Privacy Policy",
-  description: "How Vector House collects, uses and protects your information.",
+  description: "How Fourth Axis collects, uses and protects your information.",
   path: "/privacy",
 });
 

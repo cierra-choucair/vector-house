@@ -4,7 +4,7 @@ import Script from "next/script";
  * Cookie-free analytics.
  *
  * Renders nothing unless one of the following is set:
- *   NEXT_PUBLIC_PLAUSIBLE_DOMAIN — e.g. "vectorhouse.com"
+ *   NEXT_PUBLIC_PLAUSIBLE_DOMAIN — e.g. "fourthaxis.com"
  *   NEXT_PUBLIC_FATHOM_SITE_ID   — e.g. "ABCDEFGH"
  *
  * Both are privacy-first, cookie-free services, so no consent banner is

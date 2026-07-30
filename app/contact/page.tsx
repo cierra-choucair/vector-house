@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Start a conversation with Vector House about strategic intelligence, founder advisory, market entry, speaking or an editorial project.",
+    "Start a conversation with Fourth Axis about communications, positioning, intelligence, advisory, speaking or an editorial project.",
   path: "/contact",
 });
 
@@ -24,7 +24,7 @@ const expectations = [
   },
   {
     title: "A straight answer",
-    text: "If Vector House is not the right fit, you will be told so directly, and pointed elsewhere when possible.",
+    text: "If Fourth Axis is not the right fit, you will be told so directly, and pointed elsewhere when possible.",
   },
 ];
 

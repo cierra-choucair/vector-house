@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import type { Article, ArticleCategory } from "@/types";
 import { articleCategories } from "@/content/articles";
-import { ArticleCard } from "@/components/insights/ArticleCard";
+import { ArticleCard } from "@/components/ideas/ArticleCard";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -14,7 +14,7 @@ const PAGE_SIZE = 6;
  * Client-side article browser: full-text search, category filters and
  * load-more pagination over the locally provided article set.
  */
-export function InsightsExplorer({ articles }: { articles: Article[] }) {
+export function IdeasExplorer({ articles }: { articles: Article[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<ArticleCategory | "All">("All");
   const [visible, setVisible] = useState(PAGE_SIZE);
@@ -80,7 +80,7 @@ export function InsightsExplorer({ articles }: { articles: Article[] }) {
         </div>
 
         <div className="relative w-full lg:max-w-xs">
-          <label htmlFor="insights-search" className="sr-only">
+          <label htmlFor="ideas-search" className="sr-only">
             Search articles
           </label>
           <Search
@@ -88,7 +88,7 @@ export function InsightsExplorer({ articles }: { articles: Article[] }) {
             className="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-fog"
           />
           <input
-            id="insights-search"
+            id="ideas-search"
             type="search"
             placeholder="Search articles"
             value={query}

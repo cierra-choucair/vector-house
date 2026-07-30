@@ -1,7 +1,7 @@
 import { getAllArticles, getArticleBySlug } from "@/content/articles";
 import { ogSize, renderOgImage } from "@/lib/og";
 
-export const alt = "Vector House Insights";
+export const alt = "Fourth Axis Ideas";
 export const size = ogSize;
 export const contentType = "image/png";
 
@@ -17,7 +17,7 @@ export default async function OpengraphImage({
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   return renderOgImage({
-    eyebrow: article ? `Insights / ${article.category}` : "Insights",
+    eyebrow: article ? `Ideas / ${article.category}` : "Ideas",
     title: article?.title ?? "Signals from the frontier",
   });
 }

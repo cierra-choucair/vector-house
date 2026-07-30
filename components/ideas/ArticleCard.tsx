@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Article } from "@/types";
 import { formatDate } from "@/lib/utils";
-import { ArticleVisual } from "@/components/insights/ArticleVisual";
+import { ArticleVisual } from "@/components/ideas/ArticleVisual";
 
-/** Editorial article card used across the homepage and Insights grid. */
+/** Editorial article card used across the homepage and Ideas grid. */
 export function ArticleCard({
   article,
   showVisual = true,
@@ -29,7 +29,7 @@ export function ArticleCard({
         </p>
         <h3 className="mt-4 font-serif text-xl leading-snug text-paper transition-colors group-hover:text-signal">
           <Link
-            href={`/insights/${article.slug}`}
+            href={`/ideas/${article.slug}`}
             className="focus-visible:outline-none"
           >
             {/* Stretched link covers the whole card */}

@@ -1,12 +1,15 @@
 import type { NavItem } from "@/types";
 
-/** Primary header navigation. */
+/**
+ * Primary header navigation.
+ * Structure follows the foundational document: Home · Services · Work ·
+ * About · Ideas · Contact.
+ */
 export const mainNav: NavItem[] = [
   { label: "Services", href: "/services" },
-  { label: "Intelligence", href: "/strategic-intelligence" },
-  { label: "Founder Advisory", href: "/founder-advisory" },
-  { label: "Insights", href: "/insights" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
+  { label: "Ideas", href: "/ideas" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -16,19 +19,21 @@ export const navCta: NavItem = { label: "Start a conversation", href: "/contact"
 /** Footer columns. */
 export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
-    heading: "Services",
+    heading: "Practice",
     items: [
-      { label: "All services", href: "/services" },
-      { label: "Strategic Intelligence", href: "/strategic-intelligence" },
-      { label: "Founder Advisory", href: "/founder-advisory" },
-      { label: "Ecosystem & Market Entry", href: "/ecosystem-market-entry" },
+      { label: "Communications & Marketing", href: "/services#communications" },
+      { label: "Strategic Positioning", href: "/services#positioning" },
+      { label: "Intelligence & Ecosystems", href: "/services#intelligence" },
+      { label: "Advisory & Special Projects", href: "/services#advisory" },
+      { label: "Ways to begin", href: "/services#begin" },
     ],
   },
   {
     heading: "Firm",
     items: [
       { label: "About", href: "/about" },
-      { label: "Insights", href: "/insights" },
+      { label: "Work", href: "/work" },
+      { label: "Ideas", href: "/ideas" },
       { label: "Speaking", href: "/speaking" },
       { label: "Contact", href: "/contact" },
     ],

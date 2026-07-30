@@ -4,28 +4,28 @@ import { PageHero } from "@/components/sections/PageHero";
 import { NewsletterCta } from "@/components/sections/NewsletterCta";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { InsightsExplorer } from "@/components/insights/InsightsExplorer";
-import { ArticleVisual } from "@/components/insights/ArticleVisual";
+import { IdeasExplorer } from "@/components/ideas/IdeasExplorer";
+import { ArticleVisual } from "@/components/ideas/ArticleVisual";
 import { getAllArticles, getFeaturedArticle } from "@/content/articles";
 import { formatDate } from "@/lib/utils";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Insights",
+  title: "Ideas",
   description:
-    "Analysis on frontier markets, strategic intelligence, founder strategy and the systems shaping quantum, AI and deep tech. Written by Vector House.",
-  path: "/insights",
-  keywords: ["frontier technology analysis", "deep tech insights"],
+    "Analysis on frontier markets, strategic intelligence, founder strategy and the systems shaping quantum, AI and deep tech. Written by Fourth Axis.",
+  path: "/ideas",
+  keywords: ["frontier technology analysis", "consequential technology ideas"],
 });
 
-export default function InsightsPage() {
+export default function IdeasPage() {
   const featured = getFeaturedArticle();
   const articles = getAllArticles();
 
   return (
     <>
       <PageHero
-        eyebrow="Insights"
+        eyebrow="Ideas"
         title="Signals from the frontier."
         lede="Analysis on emerging markets, technical authority and the systems shaping frontier technology. Written to be useful, not merely current."
       />
@@ -51,7 +51,7 @@ export default function InsightsPage() {
                 </p>
                 <h2 className="mt-5 font-serif text-3xl leading-tight text-paper transition-colors group-hover:text-signal md:text-4xl">
                   <Link
-                    href={`/insights/${featured.slug}`}
+                    href={`/ideas/${featured.slug}`}
                     className="focus-visible:outline-none"
                   >
                     <span className="absolute inset-0" aria-hidden="true" />
@@ -80,7 +80,7 @@ export default function InsightsPage() {
       {/* Search, filters, grid */}
       <section className="border-t border-edge">
         <Container className="py-16 md:py-20">
-          <InsightsExplorer articles={articles} />
+          <IdeasExplorer articles={articles} />
         </Container>
       </section>
 

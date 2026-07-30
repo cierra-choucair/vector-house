@@ -4,44 +4,55 @@
  * Everything an editor might need to change lives here: identity, URLs,
  * contact details, social links and feature flags. Components read from
  * this file rather than hard-coding values.
+ *
+ * Brand source of truth: "Fourth Axis — Foundational Positioning"
+ * (July 2026). The message system on this site follows that document.
  */
 
 export const siteConfig = {
-  name: "Vector House",
-  tagline: "Ideas with direction.",
+  name: "Fourth Axis",
+  /** Master line. */
+  tagline: "The missing dimension between vision and execution.",
+  /** Category descriptor used in eyebrows and the footer. */
+  descriptor:
+    "Communications, marketing, strategy and intelligence for consequential technology",
+  /** Primary positioning statement. */
   description:
-    "Vector House is a strategic intelligence and advisory firm helping frontier-technology companies translate technical advantage into market position, authority and commercial opportunity.",
+    "Fourth Axis is a strategy, communications and intelligence practice for consequential technologies. We help founders and institutions turn technical complexity into clear market positions, credible narratives and coordinated action.",
 
   /**
    * Canonical production URL.
    * Override with NEXT_PUBLIC_SITE_URL once the real domain is connected.
-   * [VERIFIED CONTENT REQUIRED] — confirm the final domain.
+   * [VERIFIED CONTENT REQUIRED] — complete formal domain and trademark
+   * clearance before public launch (see foundational document, "Immediate
+   * build priorities").
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vectorhouse.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://fourthaxis.com",
 
   /**
    * Public contact address.
    * [VERIFIED CONTENT REQUIRED] — replace if the live domain or inbox differs.
    */
-  email: "hello@vectorhouse.com",
+  email: "hello@fourthaxis.com",
 
   founder: {
     name: "Cierra Choucair",
     role: "Founder & Principal",
     shortBio:
-      "Strategist, writer, analyst and ecosystem builder working across quantum technology, artificial intelligence, scientific innovation and international technology communities.",
+      "Strategist, science communicator, journalist, founder and global speaker working across quantum technology, AI, scientific discovery and emerging systems.",
   },
 
   keywords: [
-    "frontier technology strategy",
-    "deep-tech strategy",
-    "quantum technology consulting",
-    "emerging technology market intelligence",
-    "founder advisory",
-    "technology ecosystem strategy",
-    "international market entry",
-    "competitive intelligence for deep tech",
+    "consequential technology",
+    "quantum technology communications",
+    "deep tech marketing strategy",
     "strategic positioning for technical founders",
+    "emerging technology market intelligence",
+    "technology ecosystem strategy",
+    "thought leadership for deep tech",
+    "founder positioning",
+    "quantum strategy consulting",
+    "international market entry",
   ],
 } as const;
 
@@ -49,7 +60,7 @@ export const socialLinks = [
   {
     label: "LinkedIn",
     /** [VERIFIED CONTENT REQUIRED] — replace with the real LinkedIn profile URL. */
-    href: "https://www.linkedin.com/company/vector-house",
+    href: "https://www.linkedin.com/company/fourth-axis",
     icon: "linkedin",
   },
   {
@@ -61,28 +72,31 @@ export const socialLinks = [
 
 /**
  * Feature flags for sections that depend on content still awaiting
- * verification. Each hidden section renders nothing until its flag is
- * enabled, so the live site never shows placeholder text.
+ * verification or permissions. Each hidden section renders nothing until
+ * its flag is enabled, so the live site never shows placeholder text.
  *
- * Flip a flag to true only after the underlying data file has been filled
- * in with verified content (search the codebase for
+ * Flip a flag to true only after the underlying data has been filled in
+ * with verified content (search the codebase for
  * "[VERIFIED CONTENT REQUIRED]").
  */
 export const featureFlags = {
-  /** Selected speaking engagements list (About + Speaking pages). */
+  /**
+   * External links/artifacts on Work proof stories. The stories themselves
+   * are drawn from the foundational positioning document; public links,
+   * outcomes and any partner-owned material still need gathering and
+   * permission checks before display.
+   */
+  showProofLinks: false,
+  /** Selected speaking engagements list (Speaking page). */
   showSelectedEvents: false,
   /** Embedded speaking video reel. */
   showSpeakingVideo: false,
   /** Testimonials on the Speaking page. */
   showTestimonials: false,
-  /** Speaker photographs. */
+  /** Founder / speaker photographs. */
   showSpeakerPhotos: false,
   /** Downloadable speaker sheet PDF. */
   showSpeakerSheet: false,
-  /** Selected writing and analysis credits (About page). */
-  showSelectedWriting: false,
-  /** Current ventures list (About page). */
-  showCurrentVentures: false,
 } as const;
 
 export type FeatureFlag = keyof typeof featureFlags;

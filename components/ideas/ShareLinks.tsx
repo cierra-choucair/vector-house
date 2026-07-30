@@ -11,7 +11,7 @@ const iconButton =
 /** Share the current article to X, LinkedIn, or copy its URL. */
 export function ShareLinks({ slug, title }: { slug: string; title: string }) {
   const [copied, setCopied] = useState(false);
-  const url = `${siteConfig.url}/insights/${slug}`;
+  const url = `${siteConfig.url}/ideas/${slug}`;
 
   async function copyLink() {
     try {

@@ -1,5 +1,5 @@
 /**
- * Shared types for Vector House.
+ * Shared types for Fourth Axis.
  *
  * Content types are deliberately CMS-shaped: flat fields, string slugs and
  * a block-based article body so the data layer can be migrated to a headless

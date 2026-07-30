@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Strategic Intelligence for Frontier Technology`,
+    default: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Strategic Intelligence for Frontier Technology`,
+    title: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Strategic Intelligence for Frontier Technology`,
+    title: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
     description: siteConfig.description,
   },
   robots: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0b0e",
+  themeColor: "#0a0a10",
   colorScheme: "dark",
 };
 

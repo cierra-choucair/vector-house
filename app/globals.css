@@ -3,27 +3,28 @@
 /* ------------------------------------------------------------------ */
 /* Design tokens                                                       */
 /*                                                                     */
-/* A dark, editorial system: near-black foundation, warm white type,   */
-/* restrained electric-blue and violet accents. Token names are        */
-/* semantic so the palette can be retuned in one place.                */
+/* The Fourth Axis dark cosmic system: near-black foundation with an   */
+/* indigo cast, metallic-light type, restrained midnight-indigo and    */
+/* deep-plum accents. Token names are semantic so the palette can be   */
+/* retuned in one place.                                               */
 /* ------------------------------------------------------------------ */
 
 @theme {
   /* Surfaces */
-  --color-night: #0a0b0e; /* page foundation */
-  --color-panel: #0e1014; /* raised bands */
-  --color-card: #13151b; /* cards and inputs */
+  --color-night: #0a0a10; /* page foundation */
+  --color-panel: #0e0e16; /* raised bands */
+  --color-card: #13131d; /* cards and inputs */
 
   /* Lines */
-  --color-edge: #23262e; /* hairline borders */
+  --color-edge: #242434; /* hairline borders */
 
   /* Type */
-  --color-paper: #eae7e0; /* warm white */
-  --color-fog: #9298a4; /* muted gray */
+  --color-paper: #eae7e0; /* metallic light */
+  --color-fog: #9498a6; /* muted gray */
 
   /* Accents */
-  --color-signal: #6d8df6; /* electric blue */
-  --color-iris: #9a8cf8; /* violet */
+  --color-signal: #7d8bf3; /* midnight indigo */
+  --color-iris: #a878c8; /* deep plum, lifted for dark surfaces */
 
   /* Single-family typography: DM Sans everywhere. The serif and mono
      tokens intentionally alias to DM Sans so existing font-serif /
@@ -68,13 +69,19 @@ body {
 /* Utilities                                                           */
 /* ------------------------------------------------------------------ */
 
-/* Radial glow anchoring hero and CTA sections. */
+/* Radial glow anchoring hero and CTA sections: indigo with a plum edge. */
 @utility bg-glow {
-  background-image: radial-gradient(
-    ellipse 80% 55% at 50% 0%,
-    rgb(109 141 246 / 0.09),
-    transparent 70%
-  );
+  background-image:
+    radial-gradient(
+      ellipse 80% 55% at 45% 0%,
+      rgb(125 139 243 / 0.09),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60% 45% at 85% 10%,
+      rgb(168 120 200 / 0.06),
+      transparent 70%
+    );
 }
 
 /* ------------------------------------------------------------------ */
