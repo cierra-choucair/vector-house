@@ -1,8 +1,10 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
+import { FounderPortrait } from "@/components/sections/FounderPortrait";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema } from "@/lib/schema";
@@ -138,22 +140,26 @@ export default function AboutPage() {
               has outgrown the way it is currently understood, positioned
               or carried into the market.
             </p>
+            <div className="flex flex-wrap gap-4 pt-4">
+              <ButtonLink href="/about/portfolio" variant="outline">
+                Founder&rsquo;s Expanded Portfolio
+              </ButtonLink>
+            </div>
           </Reveal>
 
-          {/* Working philosophy panel */}
-          <Reveal delay={0.15}>
-            <div className="relative flex h-full flex-col justify-between gap-10 border border-edge bg-card p-8 md:p-10">
+          {/* Portrait + working philosophy */}
+          <Reveal delay={0.15} className="space-y-6">
+            <FounderPortrait className="aspect-6/7 w-full" />
+            <div className="relative border border-edge bg-card p-8 md:p-10">
               <Eyebrow>Core thesis</Eyebrow>
-              <div>
-                <p className="font-serif text-2xl leading-snug text-paper italic md:text-[1.65rem]">
-                  {coreThesis}
-                </p>
-                <p className="mt-6 text-sm leading-relaxed text-fog">
-                  Fourth Axis works in the dimension between an ambitious
-                  idea and the coordinated belief, decisions, relationships
-                  and actions required to make it real.
-                </p>
-              </div>
+              <p className="mt-8 font-serif text-2xl leading-snug text-paper italic md:text-[1.65rem]">
+                {coreThesis}
+              </p>
+              <p className="mt-6 text-sm leading-relaxed text-fog">
+                Fourth Axis works in the dimension between an ambitious
+                idea and the coordinated belief, decisions, relationships
+                and actions required to make it real.
+              </p>
             </div>
           </Reveal>
         </Container>
@@ -166,7 +172,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="The pattern"
               title="One function, many rooms."
-              lede="Each body of work proves a capability the practice now offers commercially."
+              lede="Each body of work proves a capability the practice now offers commercially. The Founder's Expanded Portfolio details every venture, publication and program behind this table."
             />
           </Reveal>
           <div className="mt-12 border-t border-edge">

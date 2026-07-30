@@ -120,11 +120,10 @@ The site also runs on any Node host: `npm run build && npm start`.
 app/                    Routes (App Router)
   api/contact/          Contact form endpoint
   api/newsletter/       Newsletter endpoint
-  ideas/                Editorial index (search, filters)
-  ideas/[slug]/         Article template + per-article OG image
-  services/             The four practices + offer portfolio
-  work/                 Selected proof stories
   about/                Founder page
+  about/portfolio/      Founder's Expanded Portfolio
+  ideas/                Editorial section (unpublished; gated by flag)
+  services/             The four practices + offer portfolio
   speaking/             Speaking and moderation
   sitemap.ts            XML sitemap
   robots.ts             robots.txt
@@ -133,29 +132,42 @@ components/
   forms/                ContactForm, NewsletterForm
   ideas/                Article cards, explorer, body, share, progress
   layout/               Header, MobileNav, Footer
-  sections/             Hero, TesseractField, PageHero, CtaSection, ...
+  sections/             Hero, TesseractField, FounderPortrait, PageHero, ...
   seo/                  JsonLd
   ui/                   Button, Container, Eyebrow, Field, Logo, Reveal, ...
 content/articles.ts     All articles (block-based bodies)
-data/                   Site config, navigation, services, work, speaking, contact
+data/                   Site config, navigation, services, portfolio, speaking
 lib/                    SEO, schema.org, validation, email, newsletter, analytics
 types/                  Shared TypeScript types
-public/                 Static assets
+public/                 Static assets (founder/ holds the portrait)
 ```
 
 Central configuration lives in:
 
 - `data/site.ts` — identity, master line, URL, email, social links,
-  **feature flags**
+  **feature flags** (including `showIdeas` and `showFounderPortrait`)
 - `data/navigation.ts` — header and footer navigation
 - `data/services.ts` — the four practices, engagement depths, offers,
   Four Dimensions methodology, audiences
-- `data/work.ts` — proof stories for the Work page
+- `data/portfolio.ts` — the Founder's Expanded Portfolio and the homepage
+  credibility highlights
 - `content/articles.ts` — articles and categories
 - `app/globals.css` — design tokens (colors, fonts, tracking)
 
-Old routes redirect permanently (`next.config.ts`): `/insights*` → `/ideas*`,
-and the three retired service pages → `/services`.
+Old routes redirect (`next.config.ts`): the retired service pages and
+`/work` permanently, and `/insights*` temporarily to the homepage while the
+Ideas section is unpublished.
+
+**Founder portrait:** add the photograph at
+`public/founder/cierra-choucair.jpg` (portrait orientation, roughly 6:7)
+and set `showFounderPortrait: true` in `data/site.ts`. It then appears in
+the homepage hero and on the About page. Until then those slots render the
+abstract tesseract panel.
+
+**Publishing Ideas:** set `showIdeas: true` in `data/site.ts`. That single
+flag restores the navigation links, the routes and the sitemap entries.
+Also point the `/insights*` redirects in `next.config.ts` back to
+`/ideas*`.
 
 ## Updating text and images
 
@@ -185,16 +197,18 @@ and the three retired service pages → `/services`.
    sitemap entry, structured data and Open Graph image are all generated
    from that one object.
 
-## Editing services, offers and proof stories
+## Editing services, offers and the portfolio
 
 - **The four practices** (names, summaries, deliverable lists) and the
   **offer portfolio** ("Ways to begin") live in `data/services.ts`. Offers
   marked `primary: true` appear on the homepage.
-- **Proof stories** live in `data/work.ts`. Keep them within what the
+- **The Founder's Expanded Portfolio** lives in `data/portfolio.ts`,
+  grouped by domain, with the homepage credibility band drawn from
+  `publicRecordHighlights` in the same file. Keep entries within what the
   foundational document supports: precise roles, no invented outcomes.
   HKA client work and partner-owned programs require explicit permission
-  before being added. When public links are gathered, add `href` values
-  and enable `featureFlags.showProofLinks` in `data/site.ts`.
+  before being expanded. When public links are gathered, add `href`
+  values and enable `featureFlags.showProofLinks` in `data/site.ts`.
 
 ## Configuring the contact form
 
@@ -237,7 +251,9 @@ next to a value awaiting verified, real-world content:
 
 - `data/site.ts` — production domain (pending clearance), public email
   address, LinkedIn URL
-- `data/work.ts` — public links and permissions for proof stories
+- `data/portfolio.ts` — public links and permissions for portfolio entries
+- `public/founder/` — the founder portrait (then enable
+  `showFounderPortrait`)
 - `app/about/page.tsx` — source links for the public-record items
 - `data/speaking.ts` — selected events, testimonials, video credits
 - `app/privacy/page.tsx`, `app/terms/page.tsx` — legal review + effective dates

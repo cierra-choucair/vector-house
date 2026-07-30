@@ -21,9 +21,14 @@ Foundational Positioning" document (July 2026); the message system in
 - Unverified claims (links, events, testimonials, photos) are gated behind
   `featureFlags` in `data/site.ts` and marked `[VERIFIED CONTENT REQUIRED]`.
   Never invent client names, statistics, testimonials or credentials.
-  Proof stories in `data/work.ts` must stay within what the foundational
-  document supports; HKA client work and partner-owned programs need
-  explicit permission before appearing.
+  Portfolio entries in `data/portfolio.ts` must stay within what the
+  foundational document supports; HKA client work and partner-owned
+  programs need explicit permission before appearing.
+- The Ideas section is unpublished: `featureFlags.showIdeas` gates its
+  routes, nav links and sitemap entries. Don't delete the content.
+- The founder portrait renders from `public/founder/cierra-choucair.jpg`
+  once `featureFlags.showFounderPortrait` is enabled (see
+  `FounderPortrait`).
 - Design tokens are defined in `app/globals.css` (`@theme`): surfaces
   `night/panel/card`, line `edge`, text `paper/fog`, accents `signal`
   (midnight indigo) / `iris` (deep plum). All type is DM Sans; the

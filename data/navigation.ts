@@ -1,15 +1,15 @@
 import type { NavItem } from "@/types";
+import { featureFlags } from "@/data/site";
 
 /**
  * Primary header navigation.
- * Structure follows the foundational document: Home · Services · Work ·
- * About · Ideas · Contact.
+ * "Ideas" reappears automatically when featureFlags.showIdeas is enabled.
  */
 export const mainNav: NavItem[] = [
   { label: "Services", href: "/services" },
-  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Ideas", href: "/ideas" },
+  ...(featureFlags.showIdeas ? [{ label: "Ideas", href: "/ideas" }] : []),
+  { label: "Speaking", href: "/speaking" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -32,8 +32,8 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     heading: "Firm",
     items: [
       { label: "About", href: "/about" },
-      { label: "Work", href: "/work" },
-      { label: "Ideas", href: "/ideas" },
+      { label: "Founder's Portfolio", href: "/about/portfolio" },
+      ...(featureFlags.showIdeas ? [{ label: "Ideas", href: "/ideas" }] : []),
       { label: "Speaking", href: "/speaking" },
       { label: "Contact", href: "/contact" },
     ],

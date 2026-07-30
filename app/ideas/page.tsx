@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
+import { featureFlags } from "@/data/site";
 import { PageHero } from "@/components/sections/PageHero";
 import { NewsletterCta } from "@/components/sections/NewsletterCta";
 import { Container } from "@/components/ui/Container";
@@ -19,6 +21,9 @@ export const metadata = buildMetadata({
 });
 
 export default function IdeasPage() {
+  // Ideas is unpublished for now; flip featureFlags.showIdeas to relaunch.
+  if (!featureFlags.showIdeas) notFound();
+
   const featured = getFeaturedArticle();
   const articles = getAllArticles();
 

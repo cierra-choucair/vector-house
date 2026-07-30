@@ -16,6 +16,7 @@ import {
   getArticleBySlug,
   getRelatedArticles,
 } from "@/content/articles";
+import { featureFlags } from "@/data/site";
 import { articleSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
@@ -57,6 +58,9 @@ export default async function ArticlePage({
 }: {
   params: Promise<Params>;
 }) {
+  // Ideas is unpublished for now; flip featureFlags.showIdeas to relaunch.
+  if (!featureFlags.showIdeas) notFound();
+
   const { slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) notFound();

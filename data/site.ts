@@ -81,7 +81,19 @@ export const socialLinks = [
  */
 export const featureFlags = {
   /**
-   * External links/artifacts on Work proof stories. The stories themselves
+   * The Ideas editorial section is unpublished for now. While false, it is
+   * removed from navigation and the sitemap and its routes return 404.
+   * All articles remain in content/articles.ts; flip to true to relaunch.
+   */
+  showIdeas: false,
+  /**
+   * Founder portrait. Add the photograph at
+   * public/founder/cierra-choucair.jpg, then set this to true. Until then
+   * the portrait slots render the abstract tesseract panel instead.
+   */
+  showFounderPortrait: false,
+  /**
+   * External links/artifacts on portfolio entries. The entries themselves
    * are drawn from the foundational positioning document; public links,
    * outcomes and any partner-owned material still need gathering and
    * permission checks before display.
