@@ -80,7 +80,7 @@ export const portfolioGroups: PortfolioGroup[] = [
     entries: [
       {
         name: "Quantum World Tour",
-        role: "Curator & moderator",
+        role: "Host",
         summary:
           "International programming built around national quantum ecosystems: executive interviews, institutional dialogue and cross-cultural convening, including moderating national ecosystem discussions on ITU AI for Good stages.",
         demonstrates:
@@ -174,6 +174,6 @@ export const publicRecordHighlights: { label: string; detail: string }[] = [
   { label: "Strategic Content Division Lead", detail: "HKA · 2026" },
   { label: "Author, The Daily Qubit", detail: "The Quantum Insider" },
   { label: "Founder", detail: "Universum Labs" },
-  { label: "Curator & moderator", detail: "Quantum World Tour" },
-  { label: "Profiled speaker", detail: "ITU AI for Good" },
+  { label: "Host", detail: "Quantum World Tour" },
+  { label: "Profiled international quantum speaker", detail: "Global stages" },
 ];
