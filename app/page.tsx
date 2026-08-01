@@ -33,7 +33,7 @@ export default function HomePage() {
       <Hero />
 
       {/* Credibility: the public record, up front */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-12 md:py-16">
           <Reveal className="flex flex-wrap items-center justify-between gap-4">
             <Eyebrow>On the public record</Eyebrow>
@@ -48,14 +48,14 @@ export default function HomePage() {
               />
             </Link>
           </Reveal>
-          <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden border border-edge bg-edge md:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {publicRecordHighlights.map((item, index) => (
               <Reveal
                 key={item.label}
                 delay={index * 0.05}
                 className="h-full"
               >
-                <div className="flex h-full flex-col justify-between gap-3 bg-night p-5">
+                <div className="card flex h-full flex-col justify-between gap-3 p-5">
                   <p className="text-sm leading-snug font-medium text-paper">
                     {item.label}
                   </p>
@@ -70,7 +70,7 @@ export default function HomePage() {
       </section>
 
       {/* Founder */}
-      <section className="border-t border-edge">
+      <section>
         <Container className="grid gap-14 py-24 md:grid-cols-[1.2fr_1fr] md:gap-20 md:py-32">
           <Reveal>
             <Eyebrow>Founder</Eyebrow>
@@ -105,7 +105,7 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal delay={0.15} className="hidden md:block">
-            <div className="relative h-full min-h-105 border border-edge bg-card">
+            <div className="card relative h-full min-h-105 overflow-hidden">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 400 520"
@@ -156,7 +156,7 @@ export default function HomePage() {
       </section>
 
       {/* The problem */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="grid gap-12 py-24 md:grid-cols-[1fr_1.2fr] md:gap-20 md:py-32">
           <Reveal>
             <Eyebrow>The problem</Eyebrow>
@@ -186,7 +186,7 @@ export default function HomePage() {
           </Reveal>
         </Container>
         <Container className="pb-24 md:pb-28">
-          <Reveal className="border-l-2 border-signal bg-night px-8 py-8 md:px-12 md:py-10">
+          <Reveal className="card border-l-2 border-l-signal px-8 py-8 md:px-12 md:py-10">
             <p className="font-mono text-[0.65rem] uppercase tracking-eyebrow text-signal">
               Core thesis
             </p>
@@ -198,7 +198,7 @@ export default function HomePage() {
       </section>
 
       {/* The four practices */}
-      <section className="border-t border-edge">
+      <section>
         <Container className="py-24 md:py-32">
           <Reveal>
             <SectionHeading
@@ -207,12 +207,12 @@ export default function HomePage() {
               lede="Every layer is useful on its own. Together they form the Fourth Axis: communications that open the door, positioning that sets direction, intelligence that grounds it in evidence, and advisory that turns it into movement."
             />
           </Reveal>
-          <div className="mt-16 grid gap-px overflow-hidden border border-edge bg-edge sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {fourPractices.map((practice, index) => (
               <Reveal key={practice.id} delay={index * 0.08} className="h-full">
                 <Link
                   href={`/services#${practice.id}`}
-                  className="group flex h-full flex-col bg-night p-8 transition-colors hover:bg-card"
+                  className="card card-hover group flex h-full flex-col p-8"
                 >
                   <span className="flex items-baseline justify-between font-mono text-xs text-fog">
                     {practice.number}
@@ -239,7 +239,7 @@ export default function HomePage() {
       </section>
 
       {/* Ways to begin */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-24 md:py-32">
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
@@ -262,7 +262,7 @@ export default function HomePage() {
               <Reveal
                 key={offer.name}
                 delay={index * 0.06}
-                className="flex h-full flex-col border border-edge bg-night p-8"
+                className="card flex h-full flex-col p-8"
               >
                 <span className="font-mono text-xs text-signal">
                   {String(index + 1).padStart(2, "0")}
@@ -286,7 +286,7 @@ export default function HomePage() {
       </section>
 
       {/* The Four Dimensions */}
-      <section className="relative border-t border-edge">
+      <section className="relative">
         <div aria-hidden="true" className="bg-glow absolute inset-0" />
         <Container className="relative py-24 md:py-32">
           <Reveal>
@@ -301,7 +301,7 @@ export default function HomePage() {
               <Reveal
                 key={dimension.name}
                 delay={index * 0.06}
-                className="border-t border-edge pt-8"
+                className="pt-2"
               >
                 <div className="flex items-baseline gap-5">
                   <span className="font-mono text-xs text-signal">
@@ -322,7 +322,7 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-16 border-l-2 border-iris bg-panel px-8 py-8 md:px-12">
+          <Reveal className="card mt-16 border-l-2 border-l-iris px-8 py-8 md:px-12">
             <p className="font-mono text-[0.65rem] uppercase tracking-eyebrow text-iris">
               The fourth axis
             </p>
@@ -334,7 +334,7 @@ export default function HomePage() {
       </section>
 
       {/* Who it is for */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-24 md:py-32">
           <Reveal>
             <SectionHeading
@@ -347,7 +347,7 @@ export default function HomePage() {
               <Reveal
                 key={audience.title}
                 delay={index * 0.05}
-                className="border-t border-edge pt-6"
+                className="pt-2"
               >
                 <div className="flex items-baseline gap-5">
                   <span className="font-mono text-xs text-signal">

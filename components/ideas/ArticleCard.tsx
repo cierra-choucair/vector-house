@@ -13,12 +13,12 @@ export function ArticleCard({
   showVisual?: boolean;
 }) {
   return (
-    <article className="group relative flex h-full flex-col border border-edge bg-panel transition-colors hover:border-fog/50">
+    <article className="card card-hover group relative flex h-full flex-col overflow-hidden">
       {showVisual && (
         <ArticleVisual
           slug={article.slug}
           category={article.category}
-          className="aspect-video border-0 border-b border-edge"
+          className="aspect-video rounded-none border-0 border-b border-paper/8"
         />
       )}
       <div className="flex flex-1 flex-col p-6">

@@ -134,14 +134,14 @@ export function MobileNav() {
                 <Link
                   href={navCta.href}
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-2 border border-signal/60 px-6 py-3 text-sm text-signal"
+                  className="inline-flex items-center gap-2 rounded-lg border border-signal/60 px-6 py-3 text-sm text-signal"
                 >
                   {navCta.label}
                 </Link>
               </motion.div>
             </nav>
 
-            <div className="relative border-t border-edge px-8 py-6">
+            <div className="relative border-t border-edge/50 px-8 py-6">
               <p className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
                 {siteConfig.tagline}
               </p>

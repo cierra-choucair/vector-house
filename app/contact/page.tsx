@@ -45,7 +45,7 @@ export default function ContactPage() {
 
           <Reveal delay={0.1}>
             <aside className="space-y-10">
-              <div className="border border-edge bg-panel p-8">
+              <div className="card p-8">
                 <h2 className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
                   Prefer email?
                 </h2>

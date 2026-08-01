@@ -35,10 +35,10 @@ export default function SpeakingPage() {
           <Reveal>
             <SectionHeading eyebrow="Formats" title="Ways to work together on stage." />
           </Reveal>
-          <div className="mt-14 grid gap-px overflow-hidden border border-edge bg-edge sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {speakingFormats.map((format, index) => (
               <Reveal key={format.title} delay={index * 0.05} className="h-full">
-                <div className="h-full bg-night p-8">
+                <div className="card h-full p-8">
                   <span className="font-mono text-xs text-signal">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -56,7 +56,7 @@ export default function SpeakingPage() {
       </section>
 
       {/* Themes */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -70,7 +70,7 @@ export default function SpeakingPage() {
               <Reveal
                 key={theme.title}
                 delay={index * 0.04}
-                className="border-t border-edge pt-6"
+                className="pt-2"
               >
                 <div className="flex items-baseline gap-5">
                   <span className="font-mono text-xs text-signal">
@@ -93,12 +93,12 @@ export default function SpeakingPage() {
 
       {/* Selected events — hidden until verified content is added */}
       {featureFlags.showSelectedEvents && selectedEvents.length > 0 && (
-        <section className="border-t border-edge">
+        <section>
           <Container className="py-20 md:py-28">
             <Reveal>
               <SectionHeading eyebrow="Selected events" title="Recent rooms." />
             </Reveal>
-            <ul className="mt-12 divide-y divide-edge border-y border-edge">
+            <ul className="mt-12 divide-y divide-edge/50 border-y border-edge/50">
               {selectedEvents.map((item) => (
                 <li
                   key={`${item.event}-${item.year}`}
@@ -117,14 +117,14 @@ export default function SpeakingPage() {
 
       {/* Testimonials — hidden until verified content is added */}
       {featureFlags.showTestimonials && speakingTestimonials.length > 0 && (
-        <section className="border-t border-edge">
+        <section>
           <Container className="py-20 md:py-28">
             <Reveal>
               <SectionHeading eyebrow="Testimonials" title="From the room." />
             </Reveal>
             <ul className="mt-12 grid gap-6 md:grid-cols-2">
               {speakingTestimonials.map((t) => (
-                <li key={t.attribution} className="border border-edge bg-panel p-8">
+                <li key={t.attribution} className="card p-8">
                   <blockquote className="font-serif text-xl leading-snug text-paper italic">
                     {t.quote}
                   </blockquote>

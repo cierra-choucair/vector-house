@@ -62,7 +62,7 @@ export function NewsletterForm({ className }: { className?: string }) {
 
   return (
     <form onSubmit={handleSubmit} noValidate className={className}>
-      <div className="flex border border-edge bg-card transition-colors focus-within:border-signal">
+      <div className="flex overflow-hidden rounded-lg border border-paper/10 bg-card/60 backdrop-blur-sm transition-colors focus-within:border-signal">
         <label htmlFor="newsletter-email" className="sr-only">
           Email address
         </label>

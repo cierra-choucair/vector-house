@@ -15,7 +15,7 @@ export function CtaSection({
   ctaHref?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-t border-edge">
+    <section className="relative overflow-hidden">
       <div aria-hidden="true" className="bg-glow absolute inset-0" />
       {/* directional accent line */}
       <svg

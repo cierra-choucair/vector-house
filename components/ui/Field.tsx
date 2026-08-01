@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
  */
 
 const inputClasses =
-  "w-full border border-edge bg-card px-4 py-3 text-sm text-paper placeholder:text-fog/60 transition-colors focus:border-signal focus:outline-none aria-[invalid=true]:border-red-400/70";
+  "w-full rounded-lg border border-paper/10 bg-card/60 px-4 py-3 text-sm text-paper placeholder:text-fog/60 backdrop-blur-sm transition-colors focus:border-signal focus:outline-none aria-[invalid=true]:border-red-400/70";
 
 type CommonProps = {
   label: string;

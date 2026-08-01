@@ -150,7 +150,7 @@ export default function AboutPage() {
           {/* Portrait + working philosophy */}
           <Reveal delay={0.15} className="space-y-6">
             <FounderPortrait className="aspect-6/7 w-full" />
-            <div className="relative border border-edge bg-card p-8 md:p-10">
+            <div className="card relative p-8 md:p-10">
               <Eyebrow>Core thesis</Eyebrow>
               <p className="mt-8 font-serif text-2xl leading-snug text-paper italic md:text-[1.65rem]">
                 {coreThesis}
@@ -166,7 +166,7 @@ export default function AboutPage() {
       </section>
 
       {/* The recurring pattern */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -175,12 +175,12 @@ export default function AboutPage() {
               lede="Each body of work proves a capability the practice now offers commercially. The Founder's Expanded Portfolio details every venture, publication and program behind this table."
             />
           </Reveal>
-          <div className="mt-12 border-t border-edge">
+          <div className="mt-12">
             {bodyOfWork.map((row, index) => (
               <Reveal
                 key={row.work}
                 delay={index * 0.03}
-                className="grid gap-3 border-b border-edge py-6 md:grid-cols-[1fr_1.6fr] md:gap-12"
+                className="grid gap-3 border-b border-edge/50 py-6 md:grid-cols-[1fr_1.6fr] md:gap-12"
               >
                 <h3 className="font-serif text-lg leading-snug text-paper">
                   {row.work}
@@ -195,7 +195,7 @@ export default function AboutPage() {
       </section>
 
       {/* Public record */}
-      <section className="relative border-t border-edge">
+      <section className="relative">
         <div aria-hidden="true" className="bg-glow absolute inset-0" />
         <Container className="relative py-20 md:py-28">
           <Reveal>
@@ -210,7 +210,7 @@ export default function AboutPage() {
                 as="li"
                 key={item}
                 delay={index * 0.05}
-                className="flex gap-5 border border-edge bg-panel p-7"
+                className="card flex gap-5 p-7"
               >
                 <span className="font-mono text-xs text-signal">
                   {String(index + 1).padStart(2, "0")}
@@ -223,7 +223,7 @@ export default function AboutPage() {
       </section>
 
       {/* Ventures and boundaries */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -237,7 +237,7 @@ export default function AboutPage() {
               <Reveal
                 key={venture.name}
                 delay={index * 0.05}
-                className="flex h-full flex-col border border-edge bg-night p-8"
+                className="card flex h-full flex-col p-8"
               >
                 <h3 className="font-serif text-2xl text-paper">{venture.name}</h3>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-fog">

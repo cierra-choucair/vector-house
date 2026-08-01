@@ -42,9 +42,9 @@ export default function ServicesPage() {
             />
           </Reveal>
           <div className="mt-14 overflow-x-auto">
-            <div className="min-w-175 border-t border-edge">
+            <div className="min-w-175">
               {/* Header row */}
-              <div className="grid grid-cols-[8rem_1fr_1.4fr_1.4fr] gap-6 border-b border-edge py-4 font-mono text-[0.65rem] uppercase tracking-eyebrow text-fog">
+              <div className="grid grid-cols-[8rem_1fr_1.4fr_1.4fr] gap-6 border-b border-edge/60 py-4 font-mono text-[0.65rem] uppercase tracking-eyebrow text-fog">
                 <span aria-hidden="true" />
                 <span>Client entry</span>
                 <span>Fourth Axis value</span>
@@ -53,7 +53,7 @@ export default function ServicesPage() {
               {engagementDepths.map((depth) => (
                 <Reveal
                   key={depth.number}
-                  className="grid grid-cols-[8rem_1fr_1.4fr_1.4fr] gap-6 border-b border-edge py-6"
+                  className="grid grid-cols-[8rem_1fr_1.4fr_1.4fr] gap-6 border-b border-edge/60 py-6"
                 >
                   <div>
                     <span className="font-mono text-xs text-signal">
@@ -80,7 +80,7 @@ export default function ServicesPage() {
       </section>
 
       {/* The four practices */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -92,7 +92,7 @@ export default function ServicesPage() {
             {fourPractices.map((practice) => (
               <Reveal
                 key={practice.id}
-                className="grid scroll-mt-28 gap-10 border-t border-edge pt-12 md:grid-cols-[1.1fr_1fr] md:gap-20"
+                className="grid scroll-mt-28 gap-10 md:grid-cols-[1.1fr_1fr] md:gap-20"
               >
                 <div id={practice.id}>
                   <p className="flex items-center gap-4 font-mono text-xs uppercase tracking-eyebrow text-signal">
@@ -112,7 +112,7 @@ export default function ServicesPage() {
                   {practice.items.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-3 border border-edge bg-night px-4 py-3 text-sm leading-relaxed text-paper/85"
+                      className="flex gap-3 rounded-xl border border-paper/8 bg-card/45 px-4 py-3 text-sm leading-relaxed text-paper/85 backdrop-blur-sm"
                     >
                       <span
                         aria-hidden="true"
@@ -129,7 +129,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Ways to begin */}
-      <section id="begin" className="scroll-mt-20 border-t border-edge">
+      <section id="begin" className="scroll-mt-20">
         <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -143,7 +143,7 @@ export default function ServicesPage() {
               <Reveal
                 key={offer.name}
                 delay={index * 0.04}
-                className="flex h-full flex-col border border-edge bg-panel p-7"
+                className="card flex h-full flex-col p-7"
               >
                 <span className="font-mono text-xs text-signal">
                   {String(index + 1).padStart(2, "0")}
@@ -164,7 +164,7 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <Reveal className="mt-16 border-l-2 border-signal bg-panel px-8 py-8 md:px-12">
+          <Reveal className="card mt-16 border-l-2 border-l-signal px-8 py-8 md:px-12">
             <p className="font-mono text-[0.65rem] uppercase tracking-eyebrow text-signal">
               Commercial principle
             </p>
@@ -184,7 +184,7 @@ export default function ServicesPage() {
       </section>
 
       {/* What marketing means here */}
-      <section className="border-t border-edge bg-panel">
+      <section>
         <Container className="py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -194,7 +194,7 @@ export default function ServicesPage() {
             />
           </Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <Reveal className="border border-edge bg-night p-8">
+            <Reveal className="card p-8">
               <h3 className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-signal">
                 Core and owned
               </h3>
@@ -213,7 +213,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </Reveal>
-            <Reveal delay={0.08} className="border border-edge bg-night p-8">
+            <Reveal delay={0.08} className="card p-8">
               <h3 className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
                 Selective or partner-led
               </h3>

@@ -13,10 +13,10 @@ const socialIcons = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-edge bg-panel">
+    <footer className="bg-gradient-to-b from-transparent to-panel">
       <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
         {/* Newsletter band */}
-        <div className="grid gap-8 border-b border-edge py-14 md:grid-cols-2 md:gap-16">
+        <div className="grid gap-8 py-14 md:grid-cols-2 md:gap-16">
           <div>
             <p className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-signal">
               Signals from the frontier
@@ -30,7 +30,7 @@ export function Footer() {
         </div>
 
         {/* Main footer grid */}
-        <div className="grid gap-12 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+        <div className="grid gap-12 border-t border-edge/50 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div>
             <div className="flex items-center gap-3 text-paper">
               <TesseractMark className="text-signal" />
@@ -54,7 +54,7 @@ export function Footer() {
                     {...(link.href.startsWith("http")
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className="flex h-9 w-9 items-center justify-center border border-edge text-fog transition-colors hover:border-signal hover:text-signal"
+                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-paper/10 text-fog transition-colors hover:border-signal hover:text-signal"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
 
         {/* Legal line */}
-        <div className="flex flex-col gap-3 border-t border-edge py-6 text-xs text-fog md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-edge/50 py-6 text-xs text-fog md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All rights
             reserved.

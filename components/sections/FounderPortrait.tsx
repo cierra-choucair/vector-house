@@ -20,7 +20,7 @@ export function FounderPortrait({
   return (
     <figure
       className={cn(
-        "relative overflow-hidden border border-edge bg-card",
+        "relative overflow-hidden rounded-2xl border border-paper/10 bg-card/60 shadow-[0_24px_60px_-20px_rgb(0_0_0/0.6)] backdrop-blur-sm",
         className,
       )}
     >
@@ -77,18 +77,8 @@ export function FounderPortrait({
         </svg>
       )}
 
-      {/* Corner ticks */}
-      <span
-        aria-hidden="true"
-        className="absolute top-0 left-0 h-5 w-5 border-t-2 border-l-2 border-signal/70"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute right-0 bottom-0 h-5 w-5 border-r-2 border-b-2 border-signal/70"
-      />
-
       {/* Name plate */}
-      <figcaption className="absolute inset-x-0 bottom-0 border-t border-edge bg-night/80 px-5 py-4 backdrop-blur-sm">
+      <figcaption className="absolute inset-x-0 bottom-0 border-t border-paper/10 bg-night/75 px-5 py-4 backdrop-blur-sm">
         <p className="text-sm font-medium text-paper">Cierra Choucair</p>
         <p className="mt-0.5 font-mono text-[0.62rem] uppercase tracking-eyebrow text-fog">
           Founder & Principal · Fourth Axis

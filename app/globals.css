@@ -69,6 +69,29 @@ body {
 /* Utilities                                                           */
 /* ------------------------------------------------------------------ */
 
+/* Floating card surface: translucent, rounded, softly elevated. */
+@utility card {
+  border-radius: 1rem;
+  border: 1px solid rgb(234 231 224 / 0.08);
+  background-color: rgb(19 19 29 / 0.55);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 40px -16px rgb(0 0 0 / 0.55);
+}
+
+/* Interactive lift for card links. */
+@utility card-hover {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgb(234 231 224 / 0.18);
+    background-color: rgb(19 19 29 / 0.75);
+  }
+}
+
 /* Radial glow anchoring hero and CTA sections: indigo with a plum edge. */
 @utility bg-glow {
   background-image:

@@ -5,9 +5,9 @@ import { NewsletterForm } from "@/components/forms/NewsletterForm";
 /** Newsletter band used on the Ideas index and article pages. */
 export function NewsletterCta() {
   return (
-    <section className="border-t border-edge bg-panel">
+    <section>
       <Container className="py-16 md:py-20">
-        <Reveal className="grid gap-8 md:grid-cols-2 md:items-center md:gap-16">
+        <Reveal className="card grid gap-8 p-8 md:grid-cols-2 md:items-center md:gap-16 md:p-12">
           <div>
             <p className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-signal">
               Signals from the frontier

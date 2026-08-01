@@ -18,7 +18,7 @@ export function PageHero({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-edge">
+    <section className="relative overflow-hidden">
       <div aria-hidden="true" className="bg-glow absolute inset-0" />
       <Container className="relative pt-36 pb-16 md:pt-44 md:pb-20">
         <Reveal>

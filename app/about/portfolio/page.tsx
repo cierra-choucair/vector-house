@@ -37,7 +37,7 @@ export default function PortfolioPage() {
             {portfolioGroups.map((group, groupIndex) => (
               <Reveal
                 key={group.id}
-                className="grid gap-8 border-t border-edge pt-10 md:grid-cols-[1fr_2fr] md:gap-16"
+                className="grid gap-8 md:grid-cols-[1fr_2fr] md:gap-16"
               >
                 <div>
                   <span className="font-mono text-xs text-fog">
@@ -57,7 +57,7 @@ export default function PortfolioPage() {
                   {group.entries.map((entry) => (
                     <article
                       key={entry.name}
-                      className="border border-edge bg-panel p-7 md:p-8"
+                      className="card p-7 md:p-8"
                     >
                       <div className="flex flex-wrap items-baseline justify-between gap-3">
                         <h3 className="font-serif text-xl leading-snug text-paper md:text-2xl">
@@ -70,7 +70,7 @@ export default function PortfolioPage() {
                       <p className="mt-4 text-sm leading-relaxed text-fog md:text-base">
                         {entry.summary}
                       </p>
-                      <p className="mt-5 border-t border-edge pt-4 text-xs leading-relaxed text-fog">
+                      <p className="mt-5 border-t border-paper/8 pt-4 text-xs leading-relaxed text-fog">
                         <span className="font-mono uppercase tracking-eyebrow text-paper/70">
                           Demonstrates ·{" "}
                         </span>
@@ -98,7 +98,7 @@ export default function PortfolioPage() {
             featureFlags.showProofLinks in data/site.ts.
           */}
 
-          <Reveal className="mt-20 border border-edge bg-panel p-8 md:p-10">
+          <Reveal className="card mt-20 p-8 md:p-10">
             <p className="max-w-3xl text-sm leading-relaxed text-fog">
               A note on boundaries: independent editorial work, partner-led
               initiatives and client engagements conducted under other

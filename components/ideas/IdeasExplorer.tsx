@@ -68,7 +68,7 @@ export function IdeasExplorer({ articles }: { articles: Article[] }) {
               onClick={() => selectCategory(c)}
               aria-pressed={category === c}
               className={cn(
-                "border px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-eyebrow transition-colors",
+                "rounded-full border px-3.5 py-1.5 font-mono text-[0.65rem] uppercase tracking-eyebrow transition-colors",
                 category === c
                   ? "border-signal/60 bg-signal/10 text-signal"
                   : "border-edge text-fog hover:border-fog/60 hover:text-paper",
@@ -96,7 +96,7 @@ export function IdeasExplorer({ articles }: { articles: Article[] }) {
               setQuery(e.target.value);
               setVisible(PAGE_SIZE);
             }}
-            className="w-full border border-edge bg-card py-2.5 pr-4 pl-9 text-sm text-paper placeholder:text-fog/60 transition-colors focus:border-signal focus:outline-none"
+            className="w-full rounded-lg border border-paper/10 bg-card/60 py-2.5 pr-4 pl-9 backdrop-blur-sm text-sm text-paper placeholder:text-fog/60 transition-colors focus:border-signal focus:outline-none"
           />
         </div>
       </div>
@@ -108,7 +108,7 @@ export function IdeasExplorer({ articles }: { articles: Article[] }) {
 
       {/* Results */}
       {filtered.length === 0 ? (
-        <div className="mt-16 border border-edge bg-panel p-12 text-center">
+        <div className="card mt-16 p-12 text-center">
           <p className="font-serif text-2xl text-paper">No signals on this heading.</p>
           <p className="mt-3 text-sm text-fog">
             Try a different term, or clear the filters to see everything.

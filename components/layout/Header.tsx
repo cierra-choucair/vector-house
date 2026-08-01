@@ -55,7 +55,7 @@ export function Header() {
           })}
           <Link
             href={navCta.href}
-            className="border border-edge px-4 py-2 text-sm text-paper transition-colors hover:border-signal hover:text-signal"
+            className="rounded-lg border border-paper/15 bg-card/40 px-4 py-2 text-sm text-paper backdrop-blur-sm transition-colors hover:border-signal hover:text-signal"
           >
             {navCta.label}
           </Link>

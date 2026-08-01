@@ -42,11 +42,11 @@ export default function IdeasPage() {
             <p className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
               Featured
             </p>
-            <article className="group relative mt-6 grid gap-0 overflow-hidden border border-edge bg-panel transition-colors hover:border-fog/50 lg:grid-cols-2">
+            <article className="card card-hover group relative mt-6 grid gap-0 overflow-hidden lg:grid-cols-2">
               <ArticleVisual
                 slug={featured.slug}
                 category={featured.category}
-                className="aspect-video border-0 lg:aspect-auto lg:border-r lg:border-edge"
+                className="aspect-video border-0 lg:aspect-auto lg:border-r lg:border-paper/8"
               />
               <div className="flex flex-col p-8 md:p-12">
                 <p className="flex items-center gap-3 font-mono text-[0.65rem] uppercase tracking-eyebrow text-fog">
@@ -83,7 +83,7 @@ export default function IdeasPage() {
       </section>
 
       {/* Search, filters, grid */}
-      <section className="border-t border-edge">
+      <section>
         <Container className="py-16 md:py-20">
           <IdeasExplorer articles={articles} />
         </Container>

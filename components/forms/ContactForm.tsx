@@ -83,7 +83,7 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="border border-signal/30 bg-signal/5 p-10 text-center md:p-14"
+        className="rounded-2xl border border-signal/30 bg-signal/5 p-10 text-center backdrop-blur-sm md:p-14"
       >
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-signal/50 text-signal">
           <Check aria-hidden="true" className="h-5 w-5" />
@@ -179,7 +179,7 @@ export function ContactForm() {
       </div>
 
       {status === "error" && serverMessage && (
-        <p role="alert" className="mt-6 border border-red-400/40 bg-red-400/5 px-4 py-3 text-sm text-red-200">
+        <p role="alert" className="mt-6 rounded-lg border border-red-400/40 bg-red-400/5 px-4 py-3 text-sm text-red-200">
           {serverMessage}
         </p>
       )}

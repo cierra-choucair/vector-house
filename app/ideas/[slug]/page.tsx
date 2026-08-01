@@ -74,7 +74,7 @@ export default async function ArticlePage({
 
       <article>
         {/* Article header */}
-        <header className="relative overflow-hidden border-b border-edge">
+        <header className="relative overflow-hidden">
           <div aria-hidden="true" className="bg-glow absolute inset-0" />
           <Container className="relative pt-36 pb-14 md:pt-44">
             <Reveal>
@@ -127,7 +127,7 @@ export default async function ArticlePage({
           <div className="mx-auto max-w-2xl text-[1.05rem] leading-[1.85] text-paper/85">
             <ArticleBody blocks={article.body} />
 
-            <div className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-edge pt-8">
+            <div className="mt-14 flex flex-wrap items-center justify-between gap-6 border-t border-edge/50 pt-8">
               <ShareLinks slug={article.slug} title={article.title} />
               <Link
                 href="/contact"
@@ -142,7 +142,7 @@ export default async function ArticlePage({
 
       {/* Related articles */}
       {related.length > 0 && (
-        <section className="border-t border-edge bg-panel">
+        <section>
           <Container className="py-16 md:py-24">
             <Reveal>
               <h2 className="font-serif text-3xl text-paper">Related analysis</h2>
