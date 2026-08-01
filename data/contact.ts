@@ -5,11 +5,11 @@
  */
 
 export const interestOptions = [
-  "Communications and marketing",
-  "Strategic positioning",
-  "Market and ecosystem intelligence",
-  "Advisory or embedded partnership",
-  "Event, program or track strategy",
+  "Positioning and commercialization strategy",
+  "Strategic communications and authority",
+  "Ecosystem activation and market entry",
+  "Executive advisory and special projects",
+  "Program, event or track architecture",
   "Speaking or moderation",
   "Other",
 ] as const;

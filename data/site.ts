@@ -15,10 +15,10 @@ export const siteConfig = {
   tagline: "The missing dimension between vision and execution.",
   /** Category descriptor used in eyebrows and the footer. */
   descriptor:
-    "Communications, marketing, strategy and intelligence for consequential technology",
+    "Strategic positioning, communications and ecosystem activation for quantum and emerging technology",
   /** Primary positioning statement. */
   description:
-    "Fourth Axis is a strategy, communications and intelligence practice for consequential technologies. We help founders and institutions turn technical complexity into clear market positions, credible narratives and coordinated action.",
+    "Fourth Axis is a strategy and communications advisory practice for consequential technology. We help leaders clarify where they stand, articulate why their work matters, align the stakeholders required for progress and turn ambition into movement.",
 
   /**
    * Canonical production URL.
@@ -45,11 +45,11 @@ export const siteConfig = {
   keywords: [
     "consequential technology",
     "quantum technology communications",
-    "deep tech marketing strategy",
     "strategic positioning for technical founders",
-    "emerging technology market intelligence",
-    "technology ecosystem strategy",
+    "commercialization strategy for deep tech",
+    "technology ecosystem activation",
     "thought leadership for deep tech",
+    "executive authority strategy",
     "founder positioning",
     "quantum strategy consulting",
     "international market entry",

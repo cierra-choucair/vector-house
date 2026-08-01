@@ -76,7 +76,7 @@ const publicRecord: string[] = [
 const ventures: { name: string; role: string; boundary: string }[] = [
   {
     name: "Fourth Axis",
-    role: "The commercial strategy, communications, marketing, intelligence and advisory practice.",
+    role: "The founder-led strategy and communications advisory practice for consequential technology.",
     boundary:
       "Client-directed work with defined scope, deliverables and commercial terms.",
   },

@@ -22,7 +22,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
+    default: `${siteConfig.name} — Strategy & Communications for Consequential Technology`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
+    title: `${siteConfig.name} — Strategy & Communications for Consequential Technology`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
+    title: `${siteConfig.name} — Strategy & Communications for Consequential Technology`,
     description: siteConfig.description,
   },
   robots: {

@@ -37,25 +37,26 @@ export function Hero() {
             className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog"
           >
             <span aria-hidden="true" className="h-px w-6 bg-signal" />
-            Communications · Marketing · Strategy · Intelligence
+            Positioning · Communications · Ecosystem Activation · Advisory
           </motion.p>
 
           <motion.h1
             {...enter(0.25)}
             className="mt-7 font-serif text-[2.6rem] leading-[1.05] text-balance text-paper sm:text-6xl lg:text-[4.2rem]"
           >
-            Consequential technology needs more than visibility. It needs
-            direction.
+            Consequential technologies need more than a path forward. They
+            need another dimension.
           </motion.h1>
 
           <motion.p
             {...enter(0.4)}
             className="mt-7 max-w-xl text-base leading-relaxed text-fog md:text-lg"
           >
-            Fourth Axis is the founder-led practice of Cierra Choucair,
-            bringing communications, marketing, strategy and intelligence
-            together to help ambitious technologies become understood,
-            trusted and actionable.
+            Fourth Axis, the founder-led practice of Cierra Choucair, works
+            across the distance between vision and execution. We align
+            technology, market, meaning and movement so complex ideas can
+            become clear positions, credible propositions and coordinated
+            paths to adoption.
           </motion.p>
 
           <motion.div {...enter(0.55)} className="mt-9 flex flex-wrap gap-4">

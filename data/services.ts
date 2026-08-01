@@ -1,198 +1,28 @@
 /**
  * The Fourth Axis practice structure, offer portfolio and message system.
- * Language follows the foundational positioning document (July 2026).
+ * Language follows the internal operating foundation ("Practice
+ * Architecture & Engagement Blueprint", August 2026) and the founder's
+ * website message direction. Engagement durations are internal starting
+ * assumptions and are deliberately not published.
  */
 
-export type Practice = {
-  id: string;
-  number: string;
-  depthWord: string;
-  name: string;
-  role: string;
-  summary: string;
-  items: string[];
-};
+/* ------------------------------------------------------------------ */
+/* Message system                                                      */
+/* ------------------------------------------------------------------ */
 
-/** The four practices: entry point → bridge → depth → partnership. */
-export const fourPractices: Practice[] = [
-  {
-    id: "communications",
-    number: "01",
-    depthWord: "Communicate",
-    name: "Communications & Marketing",
-    role: "The doorway",
-    summary:
-      "Strategy-led communications that create clarity, credibility and consistent market presence. A company cannot write a credible message until it has decided what it believes, so this is where strategy usually begins.",
-    items: [
-      "Messaging systems and corporate narrative",
-      "Strategic content and editorial planning",
-      "Thought-leadership platforms, executive bylines and signature ideas",
-      "White papers, reports, articles, explainers and flagship publications",
-      "Launch and campaign communications",
-      "Founder and executive positioning",
-      "Website and proposal narratives",
-      "Social and channel strategy",
-      "Partner, event and program communications",
-      "Content systems that connect objectives to a repeatable publishing rhythm",
-    ],
-  },
-  {
-    id: "positioning",
-    number: "02",
-    depthWord: "Position",
-    name: "Strategic Positioning",
-    role: "The bridge",
-    summary:
-      "Decide where the company belongs and which ideas it should own. Positioning turns scattered activity into a defensible place in a market, category, ecosystem or institutional agenda.",
-    items: [
-      "Category and market positioning",
-      "Value proposition and audience architecture",
-      "Commercialization and adoption narrative",
-      "Use-case and evidence framing",
-      "Opportunity prioritization",
-      "Stakeholder and partnership strategy",
-      "Executive decision sprints",
-      "Strategic planning around launches, milestones, funding and expansion",
-    ],
-  },
-  {
-    id: "intelligence",
-    number: "03",
-    depthWord: "Understand",
-    name: "Intelligence & Ecosystems",
-    role: "The depth",
-    summary:
-      "Replace assumptions with evidence and expose opportunity. Research is never an end in itself here; every briefing is connected to a decision someone has to make.",
-    items: [
-      "Market, competitor and technology landscape research",
-      "Ecosystem and stakeholder mapping",
-      "Market-entry and jurisdiction briefings",
-      "Institutional, policy and funding signal analysis",
-      "Partnership and influence mapping",
-      "Evidence synthesis and strategic briefings",
-      "Readiness, application and opportunity analysis",
-      "Custom intelligence programs for companies, investors, events and institutions",
-    ],
-  },
-  {
-    id: "advisory",
-    number: "04",
-    depthWord: "Move",
-    name: "Advisory, Convening & Special Projects",
-    role: "The partnership",
-    summary:
-      "Align decisions, relationships, communications and execution. For a small number of organizations, Fourth Axis works as an embedded strategic partner rather than a vendor.",
-    items: [
-      "Fractional strategic advisory",
-      "Founder and executive counsel",
-      "Event, conference-track and program strategy",
-      "Executive workshops and private briefings",
-      "Cross-sector roundtables and ecosystem convening",
-      "Special initiatives connecting communications, research, partnerships and execution",
-      "Longer-term strategy and intelligence partnerships",
-    ],
-  },
-];
+/** Point of view: why the practice exists. */
+export const coreThesis =
+  "Breakthroughs do not move through the world on technical merit alone. They move when the technology is legible, the market understands its relevance, stakeholders share a credible meaning and the right people know what to do next.";
 
-/** The engagement ladder: every layer useful alone, together the Fourth Axis. */
-export const engagementDepths: {
-  number: string;
-  name: string;
-  entry: string;
-  value: string;
-  next: string;
-}[] = [
-  {
-    number: "1",
-    name: "Communicate",
-    entry: "Messaging, content, thought leadership, campaigns and executive voice",
-    value: "Create clarity, credibility and consistent market presence",
-    next: "Reveal the strategic questions underneath the communications",
-  },
-  {
-    number: "2",
-    name: "Position",
-    entry: "Narrative, category, value proposition and commercialization story",
-    value: "Decide where the company belongs and which ideas it should own",
-    next: "Identify missing evidence, audiences, partnerships and market choices",
-  },
-  {
-    number: "3",
-    name: "Understand",
-    entry: "Market, competitor, ecosystem and stakeholder intelligence",
-    value: "Replace assumptions with evidence and expose opportunity",
-    next: "Translate intelligence into priorities and coordinated action",
-  },
-  {
-    number: "4",
-    name: "Move",
-    entry: "Embedded advisory, programs, market entry, convening and special projects",
-    value: "Align decisions, relationships, communications and execution",
-    next: "Become an ongoing strategic partner",
-  },
-];
+/** The ownable line that gives the name its meaning. */
+export const fourthAxisThesis =
+  "The fourth axis is movement — the dimension that turns possibility into progress.";
 
-export type Offer = {
-  name: string;
-  summary: string;
-  bestFor: string;
-  /** Primary offers appear on the homepage "Ways to begin" section. */
-  primary?: boolean;
-};
+/** Core promise. */
+export const corePromise =
+  "From complexity to direction. From direction to movement.";
 
-/** The launch offer portfolio: clear ways to begin. */
-export const waysToBegin: Offer[] = [
-  {
-    name: "Direction Session",
-    summary:
-      "A focused executive session for one urgent question, followed by a concise decision memo with priorities and next moves.",
-    bestFor: "Founders, executives and teams with a defined decision or narrative problem.",
-    primary: true,
-  },
-  {
-    name: "Narrative & Positioning Sprint",
-    summary:
-      "Research, interviews and synthesis that produce a core narrative, message architecture, audience map and strategic recommendations.",
-    bestFor:
-      "Companies preparing for launch, fundraising, market entry or a new phase of visibility.",
-    primary: true,
-  },
-  {
-    name: "Strategic Content System",
-    summary:
-      "A research-led editorial strategy connecting business goals, signature themes, executive voices, formats, channels and a practical publishing roadmap.",
-    bestFor: "Organizations producing content without a coherent position or repeatable system.",
-    primary: true,
-  },
-  {
-    name: "Market & Ecosystem Intelligence Sprint",
-    summary:
-      "A decision-oriented map of the market, stakeholders, competitors, institutions, opportunities and entry conditions around a defined question.",
-    bestFor: "Companies, investors and institutions entering a field or geography.",
-    primary: true,
-  },
-  {
-    name: "Founder Authority Program",
-    summary:
-      "A sustained program for executive positioning, signature ideas, bylines, speaking narratives and high-substance visibility.",
-    bestFor: "Technical leaders whose authority should become a company asset.",
-  },
-  {
-    name: "Program or Track Architecture",
-    summary:
-      "Thesis, program structure, speaker and stakeholder logic, communications plan and extension strategy for an event or initiative.",
-    bestFor: "Conferences, institutions and ecosystem programs.",
-  },
-  {
-    name: "Fractional Fourth Axis",
-    summary:
-      "Ongoing strategic counsel combining communications, positioning, intelligence and executive decision support.",
-    bestFor:
-      "A small number of ambitious organizations needing embedded senior thinking without a full-time hire.",
-  },
-];
-
-/** The signature methodology. */
+/** The signature framework. */
 export const fourDimensions: {
   number: string;
   name: string;
@@ -202,79 +32,339 @@ export const fourDimensions: {
   {
     number: "01",
     name: "Technology",
-    question: "What is true?",
-    text: "What is technically possible now, what evidence exists, and which constraints, readiness conditions and dependencies must remain visible.",
+    question: "What is possible?",
+    text: "What is real, differentiated and technically possible now, and what evidence stands behind it.",
   },
   {
     number: "02",
     name: "Market",
-    question: "Where does the work belong?",
-    text: "Which problem, buyer, category, use case, alternative and competitive context give the work its meaning.",
+    question: "Where does it create value?",
+    text: "Where value can be created, for whom and under what conditions.",
   },
   {
     number: "03",
     name: "Meaning",
-    question: "Why does it matter, and to whom?",
-    text: "The narrative that creates accurate understanding, credibility and conviction, in language each audience can carry into its own rooms.",
+    question: "How is it understood and trusted?",
+    text: "How the idea is framed, understood and trusted by the audiences that matter.",
   },
   {
     number: "04",
     name: "Movement",
-    question: "What must happen next?",
-    text: "The decisions, communications, relationships, programs and sequences that turn understanding into action.",
+    question: "How does it move?",
+    text: "How people, decisions, relationships and resources are activated.",
   },
 ];
 
-export const fourthAxisThesis =
-  "Movement is the missing dimension. A true idea, a defined market and a compelling meaning still do not produce progress unless the right people can decide, coordinate and act.";
+/* ------------------------------------------------------------------ */
+/* Practice architecture                                               */
+/* ------------------------------------------------------------------ */
 
-export const coreThesis =
-  "Breakthroughs do not move through the world on technical merit alone. They move when technology, market, meaning and movement are aligned.";
+export type Practice = {
+  id: string;
+  number: string;
+  name: string;
+  /** The client outcome the practice exists to produce. */
+  outcome: string;
+  /** Boundary cue: the question this practice answers. */
+  cue: string;
+  summary: string;
+  items: string[];
+};
 
-/** Who the practice is for. */
+/**
+ * Four practices, one through-line: clarify the position, build
+ * authority, activate the ecosystem and provide ongoing judgment.
+ */
+export const fourPractices: Practice[] = [
+  {
+    id: "positioning",
+    number: "01",
+    name: "Positioning & Commercialization Strategy",
+    outcome: "A clear market position and a credible story for adoption.",
+    cue: "How the technology should enter the world.",
+    summary:
+      "Where the work usually begins: deciding what the technology is for, who it is for and why it should be believed, then turning that into a story adoption can follow.",
+    items: [
+      "Market and category positioning",
+      "Value proposition and audience strategy",
+      "Use-case framing and differentiation",
+      "Commercialization and adoption narrative",
+      "Launch and partnership propositions",
+    ],
+  },
+  {
+    id: "communications",
+    number: "02",
+    name: "Strategic Communications & Authority",
+    outcome: "A coherent voice, message system and authority platform.",
+    cue: "What the market should understand and trust.",
+    summary:
+      "Communications built on the position rather than around it: one message system, an executive point of view worth following and content that earns authority instead of filling channels.",
+    items: [
+      "Corporate messaging and narrative systems",
+      "Executive positioning and thought leadership",
+      "Strategic content and editorial systems",
+      "Narrative assets and flagship publications",
+      "Launch communications",
+    ],
+  },
+  {
+    id: "ecosystem",
+    number: "03",
+    name: "Ecosystem Activation & Market Entry",
+    outcome: "The right stakeholders aligned around a sequenced path to action.",
+    cue: "Who must move, why and in what order.",
+    summary:
+      "Turning a broad ecosystem ambition into a small number of consequential relationships moving toward defined outcomes, from market entry to coalition building.",
+    items: [
+      "Stakeholder priorities and role mapping",
+      "Partnership strategy and value propositions",
+      "Institutional engagement",
+      "Market-entry sequencing",
+      "Convening and program architecture",
+    ],
+  },
+  {
+    id: "advisory",
+    number: "04",
+    name: "Executive Advisory & Special Projects",
+    outcome: "Better high-stakes decisions and sustained strategic coherence.",
+    cue: "Judgment applied across the other practices.",
+    summary:
+      "Founder-level counsel for the moments when multiple high-stakes decisions interact: decision sessions, synthesis briefs, fractional advisory and initiative architecture.",
+    items: [
+      "Decision sessions and synthesis briefs",
+      "Founder and executive counsel",
+      "Fractional strategic advisory",
+      "Initiative architecture",
+      "Special projects",
+    ],
+  },
+];
+
+/** The engagement ladder: how work deepens. */
+export const engagementLadder: {
+  stage: string;
+  need: string;
+  offers: string;
+  logic: string;
+}[] = [
+  {
+    stage: "Enter",
+    need: "Resolve a specific decision or clarify the story.",
+    offers:
+      "Direction Session · Positioning & Narrative Sprint · Commercialization Story Sprint",
+    logic: "Fixed scope and low friction, built around one real decision.",
+  },
+  {
+    stage: "Build",
+    need: "Create an authority system or activate a market opportunity.",
+    offers:
+      "Strategic Content & Executive Authority · Ecosystem Activation Sprint · Program & Track Architecture",
+    logic: "A defined project or an initial program term.",
+  },
+  {
+    stage: "Embed",
+    need: "Maintain judgment across changing priorities.",
+    offers: "Fractional Strategic Counsel",
+    logic: "A recurring advisory relationship.",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Offers                                                              */
+/* ------------------------------------------------------------------ */
+
+export type Offer = {
+  name: string;
+  stage: "Enter" | "Build" | "Embed";
+  /** The service promise. */
+  promise: string;
+  bestFor: string;
+  /** Qualitative engagement shape; durations stay internal. */
+  format: string;
+  /** Primary offers appear on the homepage "Ways to begin" section. */
+  primary?: boolean;
+};
+
+export const waysToBegin: Offer[] = [
+  {
+    name: "Direction Session",
+    stage: "Enter",
+    promise:
+      "Turn one consequential, time-sensitive question into a clear decision frame and a practical next move.",
+    bestFor:
+      "A founder or executive stuck between options, preparing for a consequential conversation or needing an outside integrator to cut through complexity quickly.",
+    format: "A focused working session followed by a concise decision memo.",
+    primary: true,
+  },
+  {
+    name: "Positioning & Narrative Sprint",
+    stage: "Enter",
+    promise:
+      "Make a complex company, technology or initiative immediately legible, differentiated and credible to the audiences that matter.",
+    bestFor:
+      "Strong technology with inconsistent language, vague differentiation or different teams telling different versions of the company.",
+    format:
+      "A fixed-scope sprint with stakeholder interviews, synthesis and working reviews.",
+    primary: true,
+  },
+  {
+    name: "Commercialization Story Sprint",
+    stage: "Enter",
+    promise:
+      "Translate a technical capability into a credible story about customer value, adoption and the path from possibility to use.",
+    bestFor:
+      "A compelling technology whose owners cannot yet say who should care first, what problem it solves or what adoption requires.",
+    format:
+      "A fixed-scope sprint with technical and commercial interviews and use-case synthesis.",
+    primary: true,
+  },
+  {
+    name: "Strategic Content & Executive Authority",
+    stage: "Build",
+    promise:
+      "Turn expertise into a sustained authority position that advances the organization's strategic agenda.",
+    bestFor:
+      "A company or leader who must shape how a category is understood, build trust before a market matures or become the voice audiences seek out.",
+    format:
+      "A renewable program combining authority strategy, an editorial system and cornerstone assets.",
+  },
+  {
+    name: "Ecosystem Activation Sprint",
+    stage: "Build",
+    promise:
+      "Convert a broad ecosystem ambition into a prioritized set of stakeholders, propositions and relationship moves.",
+    bestFor:
+      "A market entry, pilot search or coalition, or a large contact universe that has not yet become coordinated progress.",
+    format:
+      "A fixed-scope sprint ending in a sequenced, ninety-day activation plan.",
+  },
+  {
+    name: "Program & Track Architecture",
+    stage: "Build",
+    promise:
+      "Design a conference track, roundtable, coalition or initiative with a distinctive thesis that produces movement beyond the event itself.",
+    bestFor:
+      "An organizer, institution or sponsor with a topic and a date but no sharp thesis, participant logic or plan for after the room empties.",
+    format:
+      "A project calibrated to the event, from thesis through post-event activation.",
+  },
+  {
+    name: "Fractional Strategic Counsel",
+    stage: "Embed",
+    promise:
+      "Sustained outside judgment across positioning, communications, commercialization and ecosystem priorities.",
+    bestFor:
+      "Leaders whose high-stakes decisions have started to interact and who need a trusted integrator to keep the whole coherent.",
+    format:
+      "A monthly advisory retainer with regular counsel and concise decision briefs.",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Method and fit                                                      */
+/* ------------------------------------------------------------------ */
+
+/** The common five-part method behind every engagement. */
+export const method: { number: string; name: string; text: string }[] = [
+  {
+    number: "01",
+    name: "Frame the decision",
+    text: "Define the real business question, audience, stakes, constraints and deadline.",
+  },
+  {
+    number: "02",
+    name: "Gather the signal",
+    text: "Review the minimum useful evidence through documents, interviews and available research.",
+  },
+  {
+    number: "03",
+    name: "Synthesize the direction",
+    text: "Identify the position, narrative, choices and sequence the evidence supports.",
+  },
+  {
+    number: "04",
+    name: "Build the movement system",
+    text: "Translate direction into messages, propositions, relationships, actions and decision points.",
+  },
+  {
+    number: "05",
+    name: "Transfer the judgment",
+    text: "Test the work together, document the reasoning and make the next move executable.",
+  },
+];
+
+/** Delivery principles: how the practice behaves. */
+export const deliveryPrinciples: { title: string; text: string }[] = [
+  {
+    title: "Decision before deliverable",
+    text: "Every engagement begins with the choice or movement the client needs, not a predetermined artifact.",
+  },
+  {
+    title: "Senior attention",
+    text: "Founder-led judgment is the product. It is not diluted through unnecessary layers.",
+  },
+  {
+    title: "No theater",
+    text: "No bloated decks, vague frameworks or activity that cannot be tied to a belief, decision or action.",
+  },
+  {
+    title: "Evidence with proportion",
+    text: "Enough research to support the decision. Formal intelligence and evidence products are built with Universum Labs.",
+  },
+  {
+    title: "Transfer, not dependence",
+    text: "Clients keep language, logic and systems they can use without Fourth Axis in every room.",
+  },
+  {
+    title: "Movement is measurable",
+    text: "Progress is defined in conversations, commitments, decisions and behaviors, not impressions.",
+  },
+];
+
+/** High-value moments when the practice is the right call. */
+export const buyingMoments: string[] = [
+  "The company cannot explain what makes it matter without defaulting to technical description.",
+  "A founder is preparing for a major fundraise, launch, partnership or institutional conversation.",
+  "A technology has multiple possible use cases but no clear commercialization story.",
+  "An organization needs to build authority in a crowded or immature category.",
+  "A program, conference or coalition needs a distinctive thesis and an activation plan, not just an agenda.",
+  "A leader has evidence and relationships but lacks a unifying decision frame or sequence of action.",
+];
+
+/** What the practice deliberately is not. */
+export const notThePractice: string[] = [
+  "A conventional marketing agency or an outsourced marketing department",
+  "A PR firm or press office; earned-media execution is routed to trusted partners",
+  "A market-research shop or intelligence platform; formal evidence products are built with Universum Labs",
+  "An always-on content or social-media desk",
+  "A consultancy that performs certainty instead of exercising judgment",
+];
+
+/* ------------------------------------------------------------------ */
+/* Audiences                                                           */
+/* ------------------------------------------------------------------ */
+
 export const audiences: { title: string; text: string }[] = [
   {
-    title: "Founders and CEOs",
-    text: "Deep-tech leaders with strong technology but an unclear category, an inconsistent story or too many audiences to address at once.",
+    title: "Technical founders and CEOs",
+    text: "Preparing for a funding, partnership, market-entry or category-defining moment.",
   },
   {
-    title: "Emerging-technology companies",
-    text: "Startups and scaleups preparing for a launch, fundraising cycle, partnership push, market entry or a new phase of visibility.",
+    title: "Quantum and emerging-technology companies",
+    text: "Whose technical credibility has outpaced their market clarity.",
   },
   {
-    title: "Investors, accelerators and innovation hubs",
-    text: "Organizations that need portfolio narratives, market intelligence, founder support and a credible bridge between technical and commercial audiences.",
+    title: "Investors, accelerators and venture builders",
+    text: "That need portfolio positioning, founder support or ecosystem programming.",
   },
   {
     title: "Institutions and ecosystem leaders",
-    text: "Governments, industry bodies, research organizations, events and consortia designing programs and strategic initiatives around frontier technology.",
+    text: "Economic-development organizations, events and consortia designing initiatives, convenings and market-shaping programs.",
+  },
+  {
+    title: "Corporate innovation and strategy teams",
+    text: "That need a coherent narrative and stakeholder path around a consequential technology initiative.",
   },
 ];
-
-/** The problems clients recognize, in their own words. */
-export const recognitionProblems: string[] = [
-  "Our technology is strong, but people still do not understand what we do.",
-  "Our message changes depending on who is speaking.",
-  "We are producing content, but it does not add up to a position.",
-  "We need to communicate progress without exaggerating readiness.",
-  "We do not know which story, market, use case or partnership to prioritize.",
-  "We need intelligence about an ecosystem before we enter it.",
-];
-
-/** What "marketing" means here: claimed plainly, bounded honestly. */
-export const marketingScope = {
-  owned: [
-    "Narrative, messaging and content marketing",
-    "Executive and founder visibility",
-    "Campaign, launch and channel strategy",
-    "Strategic web and proposal copy",
-    "Research-led market positioning",
-  ],
-  partnerLed: [
-    "Traditional media relations and press-office execution",
-    "Paid media buying and performance campaign operations",
-    "High-volume lead-generation operations",
-    "Web development and full visual-production teams",
-    "Commodity social posting without a strategic mandate",
-  ],
-};

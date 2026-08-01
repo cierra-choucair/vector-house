@@ -40,8 +40,8 @@ export function Footer() {
               {siteConfig.tagline}
             </p>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-fog">
-              A strategy, communications and intelligence practice for
-              founders and institutions building consequential technologies.
+              A founder-led strategy and communications advisory practice
+              for quantum and emerging technology.
             </p>
             <div className="mt-6 flex gap-3">
               {socialLinks.map((link) => {

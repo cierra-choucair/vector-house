@@ -20,7 +20,7 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 
 export const metadata = buildMetadata({
-  title: `${siteConfig.name} — Strategy, Communications & Intelligence for Consequential Technology`,
+  title: `${siteConfig.name} — Strategy & Communications for Consequential Technology`,
   description: siteConfig.description,
   path: "",
 });
@@ -169,19 +169,17 @@ export default function HomePage() {
             className="space-y-6 self-end text-base leading-relaxed text-fog md:text-lg"
           >
             <p>
-              A technically strong idea can fail to move. It may be difficult
-              to explain, poorly placed in the market, disconnected from the
-              priorities of buyers and institutions, or surrounded by
-              activity that never adds up to a strategy. In frontier
-              technology these are rarely just communications problems. They
-              are problems of interpretation, positioning, evidence, sequence
-              and decision-making.
+              Important technologies stall between technical possibility and
+              practical adoption for predictable reasons: their value is
+              unclear, their stakeholders are misaligned or their path to
+              action is undefined. In consequential technology these are
+              rarely just communications problems. They are problems of
+              position, meaning, sequence and decision.
             </p>
             <p>
               Communications is simply where the incoherence becomes visible.
               A company cannot write a credible message until it has decided
-              what it believes, where it belongs, who must care and what
-              proof will create trust.
+              where it stands, why its work matters and who must move next.
             </p>
           </Reveal>
         </Container>
@@ -203,8 +201,8 @@ export default function HomePage() {
           <Reveal>
             <SectionHeading
               eyebrow="The practice"
-              title="One firm, four depths of engagement."
-              lede="Every layer is useful on its own. Together they form the Fourth Axis: communications that open the door, positioning that sets direction, intelligence that grounds it in evidence, and advisory that turns it into movement."
+              title="Four practices, one through-line."
+              lede="Clarify the position, build authority, activate the ecosystem and keep judgment in the room as the work moves. Each practice is useful on its own; together they carry an idea from possibility to adoption."
             />
           </Reveal>
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -214,15 +212,17 @@ export default function HomePage() {
                   href={`/services#${practice.id}`}
                   className="card card-hover group flex h-full flex-col p-8"
                 >
-                  <span className="flex items-baseline justify-between font-mono text-xs text-fog">
+                  <span className="font-mono text-xs text-fog">
                     {practice.number}
-                    <span className="text-signal">{practice.depthWord}</span>
                   </span>
-                  <h3 className="mt-6 font-serif text-2xl leading-snug text-paper transition-colors group-hover:text-signal">
+                  <h3 className="mt-5 font-serif text-2xl leading-snug text-paper transition-colors group-hover:text-signal">
                     {practice.name}
                   </h3>
+                  <p className="mt-2 text-sm text-signal/90 italic">
+                    {practice.cue}
+                  </p>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-fog">
-                    {practice.summary}
+                    {practice.outcome}
                   </p>
                   <span className="mt-8 inline-flex items-center gap-2 text-xs font-medium text-fog transition-colors group-hover:text-signal">
                     Explore the practice
@@ -244,7 +244,8 @@ export default function HomePage() {
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               eyebrow="Ways to begin"
-              title="Clear entry points, not a menu of deliverables."
+              title="Enter through one real decision."
+              lede="Three fixed-scope entry points. Deeper programs and embedded counsel follow when the first engagement exposes the next layer, never because a funnel demands it."
             />
             <Link
               href="/services#begin"
@@ -257,23 +258,28 @@ export default function HomePage() {
               />
             </Link>
           </Reveal>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {primaryOffers.map((offer, index) => (
               <Reveal
                 key={offer.name}
                 delay={index * 0.06}
                 className="card flex h-full flex-col p-8"
               >
-                <span className="font-mono text-xs text-signal">
-                  {String(index + 1).padStart(2, "0")}
+                <span className="flex items-baseline justify-between font-mono text-xs">
+                  <span className="text-signal">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[0.62rem] uppercase tracking-eyebrow text-fog">
+                    {offer.stage}
+                  </span>
                 </span>
                 <h3 className="mt-5 font-serif text-2xl leading-snug text-paper">
                   {offer.name}
                 </h3>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-fog">
-                  {offer.summary}
+                  {offer.promise}
                 </p>
-                <p className="mt-6 border-t border-edge pt-5 text-xs leading-relaxed text-fog">
+                <p className="mt-6 border-t border-paper/8 pt-5 text-xs leading-relaxed text-fog">
                   <span className="font-mono uppercase tracking-eyebrow text-paper/70">
                     Best for ·{" "}
                   </span>

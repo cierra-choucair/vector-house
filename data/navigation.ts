@@ -21,10 +21,10 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
     heading: "Practice",
     items: [
-      { label: "Communications & Marketing", href: "/services#communications" },
-      { label: "Strategic Positioning", href: "/services#positioning" },
-      { label: "Intelligence & Ecosystems", href: "/services#intelligence" },
-      { label: "Advisory & Special Projects", href: "/services#advisory" },
+      { label: "Positioning & Commercialization", href: "/services#positioning" },
+      { label: "Communications & Authority", href: "/services#communications" },
+      { label: "Ecosystem Activation", href: "/services#ecosystem" },
+      { label: "Executive Advisory", href: "/services#advisory" },
       { label: "Ways to begin", href: "/services#begin" },
     ],
   },

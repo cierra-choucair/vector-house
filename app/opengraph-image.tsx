@@ -8,6 +8,6 @@ export const contentType = "image/png";
 export default function OpengraphImage() {
   return renderOgImage({
     eyebrow: "For consequential technology",
-    title: "Consequential technology needs more than visibility. It needs direction.",
+    title: "Consequential technologies need more than a path forward. They need another dimension.",
   });
 }

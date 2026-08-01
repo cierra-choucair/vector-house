@@ -4,9 +4,13 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import {
-  engagementDepths,
+  buyingMoments,
+  corePromise,
+  deliveryPrinciples,
+  engagementLadder,
   fourPractices,
-  marketingScope,
+  method,
+  notThePractice,
   waysToBegin,
 } from "@/data/services";
 import { buildMetadata } from "@/lib/seo";
@@ -14,11 +18,11 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Services",
   description:
-    "Communications and marketing, strategic positioning, intelligence and ecosystems, and embedded advisory for consequential technologies. One practice, four depths of engagement.",
+    "Positioning and commercialization strategy, strategic communications and authority, ecosystem activation and market entry, and executive advisory for quantum and emerging technology.",
   path: "/services",
   keywords: [
-    "deep tech communications agency",
-    "quantum marketing strategy",
+    "quantum communications advisory",
+    "commercialization narrative",
     "technology positioning consultancy",
   ],
 });
@@ -28,67 +32,14 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="One practice, four depths of engagement."
-        lede="Clients usually arrive with work they need now: messaging, content, a launch, a report. Every engagement is built so that the immediate work also reveals the strategic layer underneath it. Each depth is useful on its own. Together, they form the Fourth Axis."
+        title="Four practices, one through-line."
+        lede="Fourth Axis is a founder-led strategy and communications advisory practice for consequential technology. We help leaders clarify where they stand, articulate why their work matters, align the stakeholders required for progress and turn ambition into movement."
       />
-
-      {/* Engagement ladder */}
-      <section>
-        <Container className="py-20 md:py-28">
-          <Reveal>
-            <SectionHeading
-              eyebrow="How engagements deepen"
-              title="Begin anywhere. Build toward direction."
-            />
-          </Reveal>
-          <div className="mt-14 overflow-x-auto">
-            <div className="min-w-175">
-              {/* Header row */}
-              <div className="grid grid-cols-[8rem_1fr_1.4fr_1.4fr] gap-6 border-b border-edge/60 py-4 font-mono text-[0.65rem] uppercase tracking-eyebrow text-fog">
-                <span aria-hidden="true" />
-                <span>Client entry</span>
-                <span>Fourth Axis value</span>
-                <span>Natural next step</span>
-              </div>
-              {engagementDepths.map((depth) => (
-                <Reveal
-                  key={depth.number}
-                  className="grid grid-cols-[8rem_1fr_1.4fr_1.4fr] gap-6 border-b border-edge/60 py-6"
-                >
-                  <div>
-                    <span className="font-mono text-xs text-signal">
-                      {depth.number}
-                    </span>
-                    <p className="mt-1 font-serif text-lg text-paper">
-                      {depth.name}
-                    </p>
-                  </div>
-                  <p className="self-center text-sm leading-relaxed text-fog">
-                    {depth.entry}
-                  </p>
-                  <p className="self-center text-sm leading-relaxed text-paper/85">
-                    {depth.value}
-                  </p>
-                  <p className="self-center text-sm leading-relaxed text-fog">
-                    {depth.next}
-                  </p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
 
       {/* The four practices */}
       <section>
-        <Container className="py-20 md:py-28">
-          <Reveal>
-            <SectionHeading
-              eyebrow="The practices"
-              title="What each practice covers."
-            />
-          </Reveal>
-          <div className="mt-4 space-y-20 md:space-y-24">
+        <Container className="py-16 md:py-24">
+          <div className="space-y-16 md:space-y-20">
             {fourPractices.map((practice) => (
               <Reveal
                 key={practice.id}
@@ -96,19 +47,22 @@ export default function ServicesPage() {
               >
                 <div id={practice.id}>
                   <p className="flex items-center gap-4 font-mono text-xs uppercase tracking-eyebrow text-signal">
-                    {practice.number} · {practice.depthWord}
-                    <span className="text-fog normal-case tracking-normal">
-                      {practice.role}
+                    {practice.number}
+                    <span className="normal-case tracking-normal text-fog italic">
+                      {practice.cue}
                     </span>
                   </p>
-                  <h3 className="mt-5 font-serif text-3xl leading-tight text-paper md:text-4xl">
+                  <h2 className="mt-5 font-serif text-3xl leading-tight text-paper md:text-4xl">
                     {practice.name}
-                  </h3>
-                  <p className="mt-5 max-w-xl text-base leading-relaxed text-fog">
+                  </h2>
+                  <p className="mt-4 text-base font-medium text-paper/90">
+                    {practice.outcome}
+                  </p>
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-fog">
                     {practice.summary}
                   </p>
                 </div>
-                <ul className="grid gap-3 self-center sm:grid-cols-2">
+                <ul className="grid gap-3 self-center">
                   {practice.items.map((item) => (
                     <li
                       key={item}
@@ -128,14 +82,49 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      {/* Ways to begin */}
+      {/* Engagement ladder */}
+      <section>
+        <Container className="py-16 md:py-24">
+          <Reveal>
+            <SectionHeading
+              eyebrow="How engagements deepen"
+              title="Enter. Build. Embed."
+              lede="The entry offer solves a real immediate problem. Deeper work follows because the first engagement exposes the next decision, never because a funnel demands it."
+            />
+          </Reveal>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {engagementLadder.map((rung, index) => (
+              <Reveal
+                key={rung.stage}
+                delay={index * 0.06}
+                className="card flex h-full flex-col p-8"
+              >
+                <span className="font-mono text-xs uppercase tracking-eyebrow text-signal">
+                  {String(index + 1).padStart(2, "0")} · {rung.stage}
+                </span>
+                <h3 className="mt-5 font-serif text-xl leading-snug text-paper">
+                  {rung.need}
+                </h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-fog">
+                  {rung.offers}
+                </p>
+                <p className="mt-5 border-t border-paper/8 pt-4 text-xs leading-relaxed text-fog">
+                  {rung.logic}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* The seven offers */}
       <section id="begin" className="scroll-mt-20">
-        <Container className="py-20 md:py-28">
+        <Container className="py-16 md:py-24">
           <Reveal>
             <SectionHeading
               eyebrow="Ways to begin"
-              title="The launch portfolio."
-              lede="Short-cycle work that closes quickly, mid-depth engagements that show strategic range, and a small number of embedded partnerships."
+              title="Seven offers, each built around a recognizable problem."
+              lede="Every offer has a bounded shape and a natural path into deeper work. Scope adapts to the decision at hand; pricing follows scope."
             />
           </Reveal>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -145,16 +134,24 @@ export default function ServicesPage() {
                 delay={index * 0.04}
                 className="card flex h-full flex-col p-7"
               >
-                <span className="font-mono text-xs text-signal">
-                  {String(index + 1).padStart(2, "0")}
+                <span className="flex items-baseline justify-between font-mono text-xs">
+                  <span className="text-signal">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[0.62rem] uppercase tracking-eyebrow text-fog">
+                    {offer.stage}
+                  </span>
                 </span>
                 <h3 className="mt-4 font-serif text-xl leading-snug text-paper">
                   {offer.name}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-fog">
-                  {offer.summary}
+                  {offer.promise}
                 </p>
-                <p className="mt-5 border-t border-edge pt-4 text-xs leading-relaxed text-fog">
+                <p className="mt-4 text-xs leading-relaxed text-paper/75 italic">
+                  {offer.format}
+                </p>
+                <p className="mt-4 border-t border-paper/8 pt-4 text-xs leading-relaxed text-fog">
                   <span className="font-mono uppercase tracking-eyebrow text-paper/70">
                     Best for ·{" "}
                   </span>
@@ -164,61 +161,110 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          <Reveal className="card mt-16 border-l-2 border-l-signal px-8 py-8 md:px-12">
+          <Reveal className="card mt-14 border-l-2 border-l-signal px-8 py-8 md:px-12">
             <p className="font-mono text-[0.65rem] uppercase tracking-eyebrow text-signal">
-              Commercial principle
+              The promise
             </p>
             <p className="mt-4 max-w-3xl font-serif text-xl leading-snug text-paper italic md:text-2xl">
-              Sell the first problem. Build toward the full relationship.
+              {corePromise}
             </p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-fog">
-              A client may enter through one article, one messaging problem
-              or one event. The engagement still includes enough strategic
-              diagnosis to identify the larger need and propose the right
-              next layer, without forcing an oversized engagement before
-              trust exists. Pricing follows scope: describe the situation
-              and you will receive a proposal sized to it.
+              Fourth Axis does not publish fixed prices because no two
+              situations carry the same stakes. Describe what you are
+              navigating and you will receive a proposal scoped to the
+              decision in front of you.
             </p>
           </Reveal>
         </Container>
       </section>
 
-      {/* What marketing means here */}
-      <section>
-        <Container className="py-20 md:py-28">
+      {/* Method + principles */}
+      <section className="relative">
+        <div aria-hidden="true" className="bg-glow absolute inset-0" />
+        <Container className="relative py-16 md:py-24">
           <Reveal>
             <SectionHeading
-              eyebrow="An honest boundary"
-              title="What marketing means here."
-              lede="Fourth Axis claims strategic marketing plainly: understanding audiences, shaping value, creating market-facing narratives and connecting communications to commercial objectives. It does not pretend to be a full-stack performance shop."
+              eyebrow="How the work happens"
+              title="One method behind every engagement."
+            />
+          </Reveal>
+          <div className="mt-14 grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+            <div>
+              <ol className="space-y-7">
+                {method.map((step) => (
+                  <Reveal as="li" key={step.number} className="flex gap-5">
+                    <span className="font-mono text-xs text-signal">
+                      {step.number}
+                    </span>
+                    <div>
+                      <h3 className="font-serif text-xl leading-snug text-paper">
+                        {step.name}
+                      </h3>
+                      <p className="mt-2 max-w-md text-sm leading-relaxed text-fog">
+                        {step.text}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
+            </div>
+            <Reveal delay={0.1} className="card self-start p-8">
+              <h3 className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
+                Delivery principles
+              </h3>
+              <ul className="mt-6 space-y-5">
+                {deliveryPrinciples.map((principle) => (
+                  <li key={principle.title}>
+                    <p className="text-sm font-medium text-paper">
+                      {principle.title}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-fog">
+                      {principle.text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* Fit */}
+      <section>
+        <Container className="py-16 md:py-24">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Fit"
+              title="When Fourth Axis is the right call."
+              lede="The best clients do not simply need more content. They need greater strategic coherence and a clearer path to movement."
             />
           </Reveal>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <Reveal className="card p-8">
               <h3 className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-signal">
-                Core and owned
+                The moments that call for it
               </h3>
-              <ul className="mt-6 space-y-3">
-                {marketingScope.owned.map((item) => (
+              <ul className="mt-6 space-y-4">
+                {buyingMoments.map((moment) => (
                   <li
-                    key={item}
+                    key={moment}
                     className="flex gap-3 text-sm leading-relaxed text-paper/85"
                   >
                     <span
                       aria-hidden="true"
                       className="mt-2.5 h-px w-3.5 shrink-0 bg-signal"
                     />
-                    {item}
+                    {moment}
                   </li>
                 ))}
               </ul>
             </Reveal>
             <Reveal delay={0.08} className="card p-8">
               <h3 className="font-mono text-[0.7rem] uppercase tracking-eyebrow text-fog">
-                Selective or partner-led
+                What Fourth Axis is not
               </h3>
-              <ul className="mt-6 space-y-3">
-                {marketingScope.partnerLed.map((item) => (
+              <ul className="mt-6 space-y-4">
+                {notThePractice.map((item) => (
                   <li
                     key={item}
                     className="flex gap-3 text-sm leading-relaxed text-fog"
@@ -237,7 +283,7 @@ export default function ServicesPage() {
       </section>
 
       <CtaSection
-        title="Start with the problem in front of you."
+        title="Start with the decision in front of you."
         copy="Describe what you are navigating. You will get a straight answer about whether, and how, Fourth Axis can help."
         ctaLabel="Start a conversation"
       />

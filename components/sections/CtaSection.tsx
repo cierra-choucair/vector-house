@@ -4,8 +4,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 /** Closing call-to-action band, reused across pages. */
 export function CtaSection({
-  title = "Bring us one consequential problem.",
-  copy = "Fourth Axis works with a select number of founders, companies and institutions building technologies that deserve to be understood, trusted and acted on.",
+  title = "From complexity to direction. From direction to movement.",
+  copy = "Fourth Axis works with a select number of leaders building consequential technologies. The fastest way to evaluate the practice is to bring it one consequential problem.",
   ctaLabel = "Start a conversation",
   ctaHref = "/contact",
 }: {
