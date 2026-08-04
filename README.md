@@ -145,7 +145,7 @@ public/                 Static assets (founder/ holds the portrait)
 Central configuration lives in:
 
 - `data/site.ts` — identity, master line, URL, email, social links,
-  **feature flags** (including `showIdeas` and `showFounderPortrait`)
+  **feature flags** (including `showIdeas`)
 - `data/navigation.ts` — header and footer navigation
 - `data/services.ts` — the four practices, engagement depths, offers,
   Four Dimensions methodology, audiences
@@ -159,10 +159,10 @@ Old routes redirect (`next.config.ts`): the retired service pages and
 Ideas section is unpublished.
 
 **Founder portrait:** add the photograph at
-`public/founder/cierra-choucair.jpg` (portrait orientation, roughly 6:7)
-and set `showFounderPortrait: true` in `data/site.ts`. It then appears in
-the homepage hero and on the About page. Until then those slots render the
-abstract tesseract panel.
+`public/founder/cierra-choucair.jpg` (portrait orientation, roughly 6:7).
+It renders automatically on the next build — no flag to flip (see
+`lib/founder.ts`) — appearing in the homepage hero and on the About page.
+Until then those slots render the abstract tesseract panel.
 
 **Publishing Ideas:** set `showIdeas: true` in `data/site.ts`. That single
 flag restores the navigation links, the routes and the sitemap entries.
@@ -252,8 +252,8 @@ next to a value awaiting verified, real-world content:
 - `data/site.ts` — production domain (pending clearance), public email
   address, LinkedIn URL
 - `data/portfolio.ts` — public links and permissions for portfolio entries
-- `public/founder/` — the founder portrait (then enable
-  `showFounderPortrait`)
+- `public/founder/` — the founder portrait (renders automatically once
+  the file exists)
 - `app/about/page.tsx` — source links for the public-record items
 - `data/speaking.ts` — selected events, testimonials, video credits
 - `app/privacy/page.tsx`, `app/terms/page.tsx` — legal review + effective dates

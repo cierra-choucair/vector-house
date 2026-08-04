@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
+import { hasFounderPortrait } from "@/lib/founder";
 import { coreThesis } from "@/data/services";
 
 export const metadata = buildMetadata({
@@ -149,7 +150,10 @@ export default function AboutPage() {
 
           {/* Portrait + working philosophy */}
           <Reveal delay={0.15} className="space-y-6">
-            <FounderPortrait className="aspect-6/7 w-full" />
+            <FounderPortrait
+              showPhoto={hasFounderPortrait()}
+              className="aspect-6/7 w-full"
+            />
             <div className="card relative p-8 md:p-10">
               <Eyebrow>Core thesis</Eyebrow>
               <p className="mt-8 font-serif text-2xl leading-snug text-paper italic md:text-[1.65rem]">

@@ -86,12 +86,12 @@ export const featureFlags = {
    * All articles remain in content/articles.ts; flip to true to relaunch.
    */
   showIdeas: false,
-  /**
-   * Founder portrait. Add the photograph at
-   * public/founder/cierra-choucair.jpg, then set this to true. Until then
-   * the portrait slots render the abstract tesseract panel instead.
+  /*
+   * Founder portrait: no flag needed. Add the photograph at
+   * public/founder/cierra-choucair.jpg and it renders automatically on
+   * the next build (see lib/founder.ts). Until then the portrait slots
+   * show the abstract tesseract panel.
    */
-  showFounderPortrait: false,
   /**
    * External links/artifacts on portfolio entries. The entries themselves
    * are drawn from the foundational positioning document; public links,

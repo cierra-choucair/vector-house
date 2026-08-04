@@ -1,21 +1,22 @@
 import Image from "next/image";
-import { featureFlags } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 /**
- * Founder portrait card with a tesseract-cornered frame and name plate.
+ * Founder portrait card with name plate.
  *
- * Renders the photograph from /public/founder/cierra-choucair.jpg once
- * featureFlags.showFounderPortrait is enabled; until then it shows the
- * abstract tesseract composition so the layout never displays a broken
- * or placeholder image.
+ * `showPhoto` comes from lib/founder.ts (checked server-side at build
+ * time), so the photograph at /public/founder/cierra-choucair.jpg renders
+ * automatically once the file exists; until then the abstract tesseract
+ * composition shows, and the layout never displays a broken image.
  */
 export function FounderPortrait({
   className,
   priority = false,
+  showPhoto = false,
 }: {
   className?: string;
   priority?: boolean;
+  showPhoto?: boolean;
 }) {
   return (
     <figure
@@ -24,7 +25,7 @@ export function FounderPortrait({
         className,
       )}
     >
-      {featureFlags.showFounderPortrait ? (
+      {showPhoto ? (
         <Image
           src="/founder/cierra-choucair.jpg"
           alt="Cierra Choucair, founder and principal of Fourth Axis"

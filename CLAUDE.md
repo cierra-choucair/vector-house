@@ -27,8 +27,8 @@ Foundational Positioning" document (July 2026); the message system in
 - The Ideas section is unpublished: `featureFlags.showIdeas` gates its
   routes, nav links and sitemap entries. Don't delete the content.
 - The founder portrait renders from `public/founder/cierra-choucair.jpg`
-  once `featureFlags.showFounderPortrait` is enabled (see
-  `FounderPortrait`).
+  automatically once the file exists (build-time check in
+  `lib/founder.ts`; no flag).
 - Design tokens are defined in `app/globals.css` (`@theme`): surfaces
   `night/panel/card`, line `edge`, text `paper/fog`, accents `signal`
   (midnight indigo) / `iris` (deep plum). All type is DM Sans; the

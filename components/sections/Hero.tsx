@@ -9,7 +9,7 @@ import { FounderPortrait } from "@/components/sections/FounderPortrait";
  * Homepage hero: the founder front and center beside the message, with
  * the rotating tesseract field behind both.
  */
-export function Hero() {
+export function Hero({ showPortrait = false }: { showPortrait?: boolean }) {
   const reduceMotion = useReducedMotion();
 
   const enter = (delay: number) =>
@@ -81,7 +81,11 @@ export function Hero() {
               })}
           className="mx-auto w-full max-w-80 sm:max-w-96 lg:max-w-none lg:justify-self-end"
         >
-          <FounderPortrait priority className="aspect-6/7 w-full" />
+          <FounderPortrait
+            priority
+            showPhoto={showPortrait}
+            className="aspect-6/7 w-full"
+          />
         </motion.div>
       </div>
     </section>

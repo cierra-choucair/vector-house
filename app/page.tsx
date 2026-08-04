@@ -16,6 +16,7 @@ import {
   waysToBegin,
 } from "@/data/services";
 import { publicRecordHighlights } from "@/data/portfolio";
+import { hasFounderPortrait } from "@/lib/founder";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/site";
 
@@ -27,10 +28,11 @@ export const metadata = buildMetadata({
 
 export default function HomePage() {
   const primaryOffers = waysToBegin.filter((offer) => offer.primary);
+  const showPortrait = hasFounderPortrait();
 
   return (
     <>
-      <Hero />
+      <Hero showPortrait={showPortrait} />
 
       {/* Credibility: the public record, up front */}
       <section>
